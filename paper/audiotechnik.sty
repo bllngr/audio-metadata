@@ -1,0 +1,82 @@
+% document settings
+\documentclass[a4paper,twocolumn,abstracton,10pt]{scrartcl}
+\usepackage[paper=a4paper,left=19mm,right=19mm,top=19mm,bottom=25.4mm]{geometry}
+\usepackage[utf8]{inputenc}
+
+% support for german
+\usepackage[ngerman]{babel}
+\usepackage[babel,german=guillemets]{csquotes}
+
+% some useful packages
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{balance}
+\usepackage{tabularx}
+\usepackage{mathtools}
+\usepackage{listings}
+
+\lstset{basicstyle=\ttfamily, extendedchars=true, frame=tb, breaklines=true, numbers=left, tabsize=4,
+captionpos=b}
+
+\usepackage{prettyref}
+\usepackage{titleref}
+ %%% Für Abschnitte %%%
+ \newrefformat{sec}{siehe Abschnitt~\ref{#1} \glqq\titleref{#1}\grqq \ auf Seite \pageref{#1}}
+ %%% Für Abbildungen %%%
+ \newrefformat{fig}{siehe Abb.~\ref{#1} \glqq\titleref{#1}\grqq \ auf Seite \pageref{#1}}
+ %%% Für Tabellen %%%
+ \newrefformat{tab}{siehe Tab.~\ref{#1} \glqq\titleref{#1}\grqq \ auf Seite \pageref{#1}}
+  %%% Für Listings %%%
+ \newrefformat{lis}{Listing~\ref{#1}}
+
+% load fonts helvetica & times & courier
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{courier}
+
+
+% disable paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\skip\footins}{30pt}
+\setlength{\columnsep}{8.3mm}
+
+% Formatting section headings
+\setcounter{secnumdepth}{0}
+\usepackage{sectsty}
+\sectionfont{\normalsize\uppercase}
+\subsectionfont{\normalsize}
+\subsubsectionfont{\normalsize\mdseries\itshape}
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{6pt}{-5pt}
+\titlespacing{\subsection}{0pt}{6pt}{-5pt}
+\titlespacing{\subsubsection}{0pt}{6pt}{-5pt}
+
+\newcommand{\tblc}{\centering\arraybackslash}
+\newcommand{\authorname}[1]{\textbf{\textsf{\large #1}}}
+\newcommand{\authoremail}[1]{\texttt{\large #1}}
+
+\makeatletter
+\newcommand{\school}[1]{\newcommand{\@school}{#1}}
+\newcommand{\supervisor}[1]{\newcommand{\@supervisor}{#1}}
+\newcommand{\supervisortwo}[1]{\newcommand{\@supervisortwo}{#1}}
+\renewcommand{\maketitle}{
+	\twocolumn[ \hspace{0mm}{
+		\begin{center}
+			\textbf{ \@school, \@date } \par
+			Lehrverantwortliche: \@supervisor, \@supervisortwo \par
+			\vspace{7mm}{ \huge \bfseries \textsf \@title} \par
+			\vspace{2mm}{ \Large \bfseries \textsf \@subtitle} \par
+			\vspace{7mm} {
+				\lineskip .6em
+				\begin{tabular}[t]{c}
+					\@author
+		    	\end{tabular}
+			} \par
+		\end{center}
+	} \vspace{7mm} ]
+}
+\makeatother
