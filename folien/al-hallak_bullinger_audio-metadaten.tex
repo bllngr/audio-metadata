@@ -1,0 +1,191 @@
+\documentclass[14pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{BeamerColor}
+\usepackage[babel,german=guillemets]{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\PrerenderUnicode{Ü,ü}
+\usepackage{amssymb,amsmath}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+
+\setbeamertemplate{footline}[frame number]
+\usetheme{Boadilla}
+\usecolortheme[named=chartreuse4]{structure}
+\setbeamerfont{penis}{size*={9.0}{12.00}}
+\setbeamerfont{quellen}{size*={6.0}{10.00}}
+\renewcommand{\arraystretch}{2}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[triangle]
+
+\setbeamertemplate{sections/subsections in toc}[square]{}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\title{Metadaten für Audio-/Radiosignale}
+\subtitle{Übersicht zu Standards und zur Gewinnung}
+
+\author[M. Al-hallak, J. Bullinger]
+{Malik Al-hallak \and Julius Bullinger}
+
+\institute[Uni Weimar]{Bauhaus-Universität Weimar \\
+Fakultät Medien \\
+Bereich Vernetzte Medien \\
+Audiotechnik}
+\date{24. Juni 2011}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Motivation}
+	
+	Warum:
+		\begin{itemize}
+			\pause \item ermöglicht die Suche nach Audioinhalten
+			\pause \item internationaler standardisierter Austausch von multimedialen Ressourcen
+			\pause \item Information über Ressource ohne deren Inhalt zu betrachten\\
+		\end{itemize}
+		\pause 
+	\vspace{.5cm}Vorraussetzung:
+		\begin{itemize}
+			\pause \item Standardisierung
+			\pause \item automatisches oder manuelles Generieren
+		\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Metadaten-Standards}
+	\framesubtitle{Übersicht (Auswahl)}
+\textbf{EBUCore MDS:}
+	\begin{itemize}
+		\pause \item European Broadcasting Union
+		\pause \item Erweiterung des Dublin Core Metadata Set
+		\pause \item Spezifiziert minimale Liste von Attributen, die Medieninhalte charakterisieren (nötige Information zum Suchen und Tauschen medialer Daten)
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Metadaten-Standards}
+	\framesubtitle{Übersicht (Auswahl)}
+	
+	\textbf{MPEG-7 MDS:} \\
+	\begin{itemize}
+		\pause \item \emph{Moving Picture Expert Group}, 1996--2002
+		\pause \item Analysewerkzeuge zur \textbf{technischen} Beschreibung der Ressourcen bis zu einem hohen Abstraktionsgrad
+		\pause \item geeignet für interpretierende Suche
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Metadaten-Standards}
+	\framesubtitle{Übersicht (Auswahl)}
+	 \textbf{IPTC News Architecture G2:}
+	\begin{itemize}
+		\pause \item \emph{International Press Telecommunications Council}, 2000--2008
+		\pause \item Repräsentation und Verwaltung von Nachrichten (NewsML), Events (EventsML) und Sportveranstaltungen (SportsML)
+		\pause \item Paketfähigkeit: Mehrere NewsItems in einer Instanz; kein Inhaltsformat
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Metadaten-Standards}
+	\framesubtitle{Übersicht (Auswahl)}
+	\textbf{TV-Anytime:}
+	\begin{itemize}
+		\pause \item Vereinigung von mehr als 60 Organisationen in Europa, Asien und den USA
+		\pause \item Homogenisierung vorhandener (proprietärer) Metadaten
+		\pause \item Spezifikation zur Verbreitung und Verarbeitung von
+		 Metadaten für den Endverbraucher ($\uparrow$PVR, $\uparrow$EPG)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Vergleich}
+	\usebeamerfont{penis}
+	\begin{tabular}{ p{2.3cm} || p{1.9cm} | p{2cm} | p{1.9cm} | p{1.8cm}}
+	 & \centering{MPEG-7} & \centering{NewsML-G2} & \centering{EBUCore} & TV-Anytime \\ \hline  \hline
+
+	\centering{Nutzer}  & \centering{Algorithmen} & \centering{Nachrichten-agenturen} & \centering{Europeana EUScreen} & Verbraucher \\ \hline
+	\centering{Abstraktionsgrad} & \centering{sehr hoch} & \multicolumn{2}{c|}{gering} & \hspace{.6cm}hoch \\ \hline
+	\centering{Generierung} & \centering{automatisch} & \multicolumn{3}{c}{manuell} \\ \hline
+		\centering{Stelle in der Verwertungskette} & \centering{Suchmaschine (Verbraucher)} & \centering{Nach der Produktion} & \centering{Gesamte Ver-wertungskette} & Bei der Ausstrahlung  \\ \hline
+	\centering{Zweck} & \centering{Intuitive \hspace{.5cm} Suche} & \centering{Austausch von Nachrichten} & \centering{Austausch, Publikation, Archivierung} & \centering{Informationen für den End-verbraucher} 
+	\end{tabular}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{MAWG}
+	\framesubtitle{W3C Media Annotations Working Group (work in progress)}
+	\begin{itemize}
+		\pause \item \enquote{Meta-Standard} zur Zusammenführung genannter Standards (und weiteren)
+		\pause \item Möglichkeiten, von einem Standard in einen anderen zu konvertieren
+		\pause \item Gemeinsame Obermenge für alle Standards
+		\pause \item APIs für Browser via JavaScript und RDF
+		\pause \item \textbf{Keine} vollständige Spezifikation eines neuen Metadaten-Standards
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Quellen}
+	\usebeamerfont{quellen}
+	\begin{itemize}
+		\usebeamerfont{quellen}
+	\item Metadaten für Audiosignale:
+	
+	\begin{itemize}
+	\usebeamerfont{quellen}
+	\item http://www.dlib.indiana.edu/\textasciitilde jenlrile/metadatamap/seeingstandards\_glossary\_pamphlet.pdf
+	\item  http://is-frankfurt.de/veranstaltung/Groffmann\_SS05/Thema\%205\_Broeder\_dl.pdf
+	\end{itemize}
+	
+	\item TV-Anytime:
+	
+	\begin{itemize}
+		\usebeamerfont{quellen}
+	\item  http://tech.ebu.ch/Jahia/site/tech/cache/offonce/tvascope
+	\item http://www.etsi.org/WebSite/Technologies/TVAnytime.aspx
+	\end{itemize}
+	
+	\item EBUCore:
+	
+	\begin{itemize}
+		\usebeamerfont{quellen}
+	\item  http://tech.ebu.ch/docs/tech/tech3293v1\_2.pdf
+	\item http://tech.ebu.ch/MetadataSpecifications
+	\end{itemize}
+	
+	\item IPTC:
+	
+	\begin{itemize}
+		\usebeamerfont{quellen}
+		\item Laurent Le Meur: NewsML-G2 and the IPTC News Architecture G2
+	\end{itemize} 
+	\item MPEG-7:
+		\begin{itemize}
+			\usebeamerfont{quellen}
+			\item http://www2.tu-ilmenau.de/mediaevent/archiv/fktg/regionalveranstaltungen/Skripte/mpeg7.PDF
+			\item http://mpeg.chiariglione.org/standards/mpeg-7/mpeg-7.htm
+			\item http://www.techfak.uni-bielefeld.de/~tkaempfe/lehre/CBIR/IDBausarbeitungen/MPEG-7.pdf
+
+			
+		\end{itemize}
+		
+	\end{itemize}
+
+
+\end{frame}
+
+\end{document} 

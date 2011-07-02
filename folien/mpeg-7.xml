@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Mpeg7 xmlns="urn:mpeg:mpeg7:schema:2001" xmlns:mpeg7="urn:mpeg:mpeg7:schema:2001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:mpeg7:schema:2001 http://www.ient.rwth-aachen.de/team/crysandt/mpeg7mds/mpeg7ver1.xsd ">
+<Description xsi:type="ContentEntityType">
+<MultimediaContent xsi:type="AudioType">
+<Audio xsi:type="AudioSegmentType">
+<MediaInformation xsi:type="MediaInformationType">
+<MediaProfile xsi:type="MediaProfileType">
+<MediaInstance xsi:type="MediaInstanceType">
+<InstanceIdentifier xsi:type="UniqueIDType">UniqueID0000000000</InstanceIdentifier>
+<MediaLocator xsi:type="MediaLocatorType">
+<MediaUri>file:/home/mahu/QtSDK/Maemo/4.6.2/sysroots/fremantle-arm-sysroot-20.2010.36-2-slim/usr/share/sounds/ui-wrong_charger.wav</MediaUri>
+</MediaLocator>
+</MediaInstance>
+</MediaProfile>
+</MediaInformation>
+<AudioDescriptor xsi:type="AudioPowerType">
+<SeriesOfScalar hopSize="PT10N1000F" totalNumOfSamples="7">
+<Raw>9.0519286E-4 4.4577284E-4 2.1379543E-4 1.6402121E-4 1.8150377E-4 1.6252698E-4 2.2762814E-4</Raw>
+</SeriesOfScalar>
+</AudioDescriptor>
+<AudioDescriptor xsi:type="AudioSpectrumCentroidType">
+<SeriesOfScalar hopSize="PT10N1000F" totalNumOfSamples="5">
+<Raw>-0.8927427 0.2207622 0.1955692 0.43233174 0.44916907 </Raw>
+</SeriesOfScalar>
+</AudioDescriptor>
+<AudioDescriptor hiEdge="16000.0" loEdge="62.5" octaveResolution="1/4" xsi:type="AudioSpectrumEnvelopeType">
+<SeriesOfVector hopSize="PT10N1000F" totalNumOfSamples="170" vectorSize="34">
+<Raw mpeg7:dim="5 34">9.567439E-6 6.7013225E-6 9.446332E-6 1.3362854E-5 1.27241055E-5 1.2985577E-5 1.7106335E-5 2.3288201E-5 3.213507E-5 3.122307E-5 9.276518E-6 6.0918874E-6 2.8701909E-6 1.9028447E-6 1.2608728E-6 3.7843133E-6 4.0762034E-6 2.067878E-5 3.9584636E-5 1.1513854E-4 1.3510199E-5 7.646977E-6 1.4966266E-6 1.5002752E-6 5.1773753E-7 2.9394727E-7 3.1399023E-7 3.6283808E-7 1.4144003E-6 1.0148151E-6 7.3350904E-8 9.545139E-9 0.0 0.0 
+4.508605E-6 2.8653417E-7 1.1779211E-6 2.6075807E-6 7.6538385E-7 4.0101298E-7 2.3769597E-7 5.2106293E-7 2.8287215E-7 2.4843723E-7 5.7714664E-7 4.617528E-6 1.1048286E-6 8.1155775E-7 1.4686676E-6 8.615352E-6 4.2746337E-6 1.5833282E-5 2.6112517E-5 1.0227041E-4 1.071951E-5 7.6221722E-6 1.0358351E-6 9.910408E-7 1.4358605E-7 6.612348E-8 3.8607137E-8 1.6111414E-8 6.255613E-8 3.295854E-8 2.685437E-8 5.1746856E-9 0.0 0.0 
+5.167194E-6 1.4634606E-6 1.5557594E-6 1.5840207E-6 9.751172E-7 3.874706E-7 1.377121E-7 2.7301445E-7 1.2086963E-7 6.977408E-8 2.2337828E-7 2.1254843E-6 6.950933E-7 3.819784E-7 6.63476E-7 7.2020835E-6 4.5607762E-6 1.1217638E-5 1.9576024E-5 8.597847E-5 9.665251E-6 9.890948E-6 1.2538484E-6 7.771967E-7 1.4315796E-7 5.261422E-8 1.8915703E-8 4.902464E-9 1.6540547E-8 1.1424844E-8 3.2188307E-8 4.0241446E-9 0.0 0.0 
+1.5204863E-6 1.0659249E-7 8.29533E-8 3.550031E-8 1.2112497E-7 1.249798E-7 6.075549E-8 3.2009787E-8 5.6726922E-8 2.474031E-8 9.914771E-8 4.1246294E-6 3.2636442E-6 4.5254734E-7 7.3696583E-7 7.3951555E-6 2.4854162E-6 1.8424022E-5 1.7612869E-5 1.11808884E-4 9.6723215E-6 1.0933624E-5 1.0101917E-6 9.951649E-7 2.3935425E-7 4.909451E-8 2.3842414E-8 6.8432E-9 2.0186203E-8 9.093413E-9 3.5006156E-8 2.4046178E-9 0.0 0.0 
+2.5299468E-7 1.1796943E-8 9.068498E-9 3.6337235E-9 2.1800595E-8 4.8557883E-8 5.8516235E-8 2.6253321E-8 7.944593E-9 1.4617627E-8 9.923767E-8 4.5565453E-6 1.6465638E-6 6.7484046E-7 1.5545693E-6 9.652752E-6 3.244123E-6 1.9721723E-5 1.8634179E-5 1.0146002E-4 1.0379089E-5 1.1587798E-5 1.0238726E-6 9.838225E-7 1.4169275E-7 5.070621E-8 1.976588E-8 1.2502572E-8 4.062247E-8 2.0481803E-8 4.080922E-8 4.0164916E-9 0.0 0.0 
+</Raw>
+</SeriesOfVector>
+</AudioDescriptor>
+<AudioDescriptor xsi:type="AudioSpectrumSpreadType">
+<SeriesOfScalar hopSize="PT10N1000F" totalNumOfSamples="5">
+<Raw>1.7029109 1.1392868 1.270189 0.72365314 0.5533015 </Raw>
+</SeriesOfScalar>
+</AudioDescriptor>
+<AudioDescriptor xsi:type="AudioWaveformType">
+<SeriesOfScalar hopSize="PT10N1000F" totalNumOfSamples="7">
+<Min>-0.16644287 -0.036590576 -0.035568237 -0.035476685 -0.02861023 -0.028503418 -0.031677246</Min>
+<Max>0.21620178 0.06565857 0.03060913 0.029571533 0.028305054 0.025604248 0.035369873</Max>
+</SeriesOfScalar>
+</AudioDescriptor>
+</Audio>
+</MultimediaContent>
+</Description>
+</Mpeg7>
