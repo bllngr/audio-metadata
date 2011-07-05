@@ -1,6 +1,8 @@
 % import style file
 \input audiotechnik.sty
 
+\usepackage[normalem]{ulem}
+
 % information about this document
 \school{Bauhaus-Universität Weimar, Fakultät Medien, Lehrgebiet Audiotechnik SS 2011}
 \supervisor{Dr.-Ing. Günther Schatter}
@@ -31,6 +33,7 @@
 % Eigenleistung: 											2 Seiten
 % Further Work, Future Ausblick								1/2 Seite
 
+\usepackage{graphicx}
 \begin{document}
 	\maketitle
 	
@@ -125,18 +128,14 @@
 	\subsection{Page Numbering, Headers and Footers}
 	Do not include headers, footers or page numbers in your submission.
 	These will be added when the publications are assembled.
-		
-	% place this command somewhere in the first column of the last page
-	% in order to balance the columns on the last page
-	\balance
-	
+
 	\section{Figures/Captions}
 	Place tables/figures/images in text as close to the reference as possible
 	(see Figure~\ref{myfigure}). Figures may extend across both columns to a
 	maximum width of 17.78 cm (7").
 	\par
 	Captions should be Helvetica bold 9-point. They should be numbered (e.g.,
-	"Table 1" or "Figure 2"). Please note that the words "Table" and "Figure"
+	"Table 1"\ or "Figure 2"). Please note that the words "Table"\ and "Figure"\
 	are spelled out. Figure captions should be centered beneath the image or
 	picture, and table captions should be centered above the table body.
 	
@@ -198,9 +197,48 @@
 	Your appreciation to employers, co-workers, department heads, and/or
 	institutions that issued you a grant can be acknowledged in this section.
 	
+	% TODO: richtig platzieren!
+	\begin{figure*}[htbp]
+		\includegraphics[width=\textwidth]{images/dublin_core.pdf}
+		\caption{Kernelemente des Dublin-Core-Metadaten-Sets}
+		\label{dublincore}
+	\end{figure*}
+	
 	\newpage
 	
-	\section{Verhältnis zwischen XML und RDF/OWL (Semantic Web) und SKOS für classification schemes}
+	%%%%%%%%%%%%%%%%%% hier geht's los %%%%%%%%%%%%%%%%%%
+	
+	\section{EBUCore Metadata Set [B]}
+	Im Februar 1950 schlossen sich öffentliche Rundfunkanstalten aus 23 europäischen Ländern zu einer Union zusammen, um \enquote{eine Interessensgruppe für den Rundfunk in technischen und rechtlichen Belangen} zu gründen. Heute gehören der Europäischen Rundfunkunion \emph{(European Broadcasting Union, EBU)} 74 Mitglieder aus 56 Ländern Europas sowie 36 assoziierte Mitglieder der ganzen Welt an. (Stand: Mai 2011).
+% http://www.ebu.ch/CMSimages/en/WEB_A4_Member-list_UER_05-2011_EN_tcm6-71972.pdf 05. Juli 2011, 13:57
+% und http://www.ebu.ch/en/union/news/2010/tcm_6-67336.php 05. Juli 2011, 14:09
+
+	
+	Im Jahr 2000 kam der Wunsch auf, die Spezifikation des \emph{Dublin-Core}-Metadaten-Sets auf Audio-Archive zu übertragen. 	% http://tech.ebu.ch/lang/en/MetadataEbuCore, 05. Juli 2011, 23:19
+
+	Dublin Core ist ein 1994 entworfener Standard für Metadaten mit dem Ziel, Dokumente im Internet leicher auffindbar zu machen. Dafür werden 15 Kernfelder zur Verfügung gestellt, welche technische Daten, eine Beschreibung des Inhalts, Personen und Rechte sowie die Vernetzung und den Lebenszyklus eines Dokuments beschreiben.
+	
+	% http://de.wikipedia.org/w/index.php?title=Dublin_Core&oldid=88976612 vom  18. Mai 2011, 11:47. Abgerufen 05. Juliu 2011, 23:38.
+	
+	Im Jahr 2008 wurde dieser Wunsch erweitert auf die Spezifiaktion eines gemeinsamen Kerns an Informationen zur Durchsuchbarkeit von Archiven aller Art. Heute ist EBUCore spezifiert als \enquote{eine minimale Liste an Attributen zur Beschreibung von Audio- und Videoressourcen für eine große Auswahl an Rundfunkanwendungen, inklusive Archivierung, Austausch und Veröffentlichung}. Dafür werden die 15 Kernelemente von Dublin Core erweitert:
+	
+	Outline:
+	
+	\sout{EBU} \\
+	\sout{Aufbau auf Dublin Core} \\
+	\sout{Dublin Core} \\
+	\sout{Scope} \\
+	Aufbau \\
+	Grafik der Verwertungskette (Archive) \\
+	und noch irgendeine Grafik?! 
+	
+	
+	\newpage
+			
+	% place this command somewhere in the first column of the last page
+	% in order to balance the columns on the last page
+	\balance
+	\section{Verhältnis zwischen XML und RDF/OWL (Semantic Web) und SKOS für classification schemes [B]}
 	Absatz
 
 	\subsection{RDF, RDFS und RDF/XML}
