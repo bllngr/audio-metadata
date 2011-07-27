@@ -197,7 +197,67 @@
 	\section{Acknowledgements}
 	Your appreciation to employers, co-workers, department heads, and/or
 	institutions that issued you a grant can be acknowledged in this section.
+	\newpage
 	
+	\section {Der Metadaten Standard MPEG-7} 
+	
+	\subsection {\\Einleitung}
+	
+	Der MPEG-7 Standard wurde 2002 von der \emph{Moving Picture Expert Group} als ISO/IEC 15938 verabschiedet. Im Gegensatz zu den früheren MPEG Standards (MPEG-1, MPEG-2 und MPEG-4) kein Kompressionsstandard für multimediale Daten sondern ein Metadaten Standard für selbige.\\Er bietet eine auf XML-Basierende umfangreiche Repräsentation von Metainformation für Audio- und Videodaten.\\Im folgenden wird der Standard im hinblick auf Audiosignale detailliert vorgestellt und seine automatisch generierbaren Aspekte vorgestellt.
+	
+	\subsection{Inhalt}
+	
+	Der MPEG-7 Standard spezifiziert vier Bestandteile:
+	
+	\begin{itemize}
+		\item \emph{Descriptors}
+		\item \emph{Descriptor Schemes}
+		\item \emph{Description Definition Language}
+		\item \emph{Binary Format für MPEG-7}
+	\end{itemize}
+	
+	\subsubsection {Descriptors (D)}
+	
+Der erste Teil des Standards sind \emph{Descriptors}. Diese arbeiten auf räumlichen, zeitlichen oder physischen Segmenten der Ressource und  halten Daten zur Repräsentation eines Merkmals der Audiodatei.\\Dabei werden entweder gleiche Zeitintervalle der Ressource beschrieben oder sie wird in Segmente unterteilt und und Ähnlichkeiten und Differenzen werden aufgezeichnet. Beispiele für solche Descriptors sind der \emph{AudioWaveform} Descriptor welcher einem Intervall des Signals z.B. maximaler und minimaler Tonfrequenz zuweist.\\ Diese Strukturen sind Low-Level und beinhalten lediglich die technischen Eigenschaften der Audio-Ressource. Es werden derzeit 17 \emph{Feature Descriptors} und ein spezieller \emph{Silence Descriptor} standardisiert. Diese 18 Strukturen sind in Untergruppen Organisiert (siehe Abb. 2).\\
+
+
+\begin{figure}[h]
+\includegraphics [scale=0.65]{image061.jpg}
+\caption {Low-Level Descriptors in MPEG-7}
+\end{figure}
+
+Der \emph{Silence Descriptor} ist einfach die Darstellung das an dieser Stelle kein signifikanter Ton vorhanden ist und kann z.B. dazu eingesetzt werden ein Segment mit dieser Eigenschaft nicht weiter zu bearbeiten was die Erstellung der Metadaten effizienter macht.\\
+
+	\subsubsection{Description Schemes (DS)}
+		Der MPEG-7 Standard liefert neben den Low-Level Descriptors auch High-Level Description Tools in Form von \emph{Description Schemes}. Description Schemes beschreiben die Audiodatei auf einer höheren Abstraktionsebene und setzen dafür Descriptors und andere Description Schemes in Beziehung zueinander. \\Desciption Schemes nutzen die Rohdaten aus Descriptors und anderen Description Schemes um Audiodaten auf einem hohen Abstraktionsgrad zu beschreiben. Sodass Description Schemes die Struktur und die Semantik liefern in welcher die Descriptors und andere Description Schemes in Verbindung gesetzt wird. Damit kann man neben der rein technischen Low-Level Beschreibung der Ressource auch Charakteristiken wie Ton- , Instrumenten- und Melodie-Erkennung erzeugen und vermerken. \\
+		
+	\subsubsection{Description Definition Language (DDL)}
+Neben den bereits genannten Möglichkeiten bietet der MPEG-7 Standard ein weiteres mächtiges Werkzeug. Mit der Description Definition Language ist es möglich weitere, auf die Anforderungen des jeweiligen Nutzers zugeschnittene, Descriptors und Description Schemes zu entwickeln.\\ Die Description Definition Language ist eine Erweiterung von XML-Schema.
+
+\subsubsection{Binary Format für MPEG-7 BiM}
+
+Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen zu können. Das BiM bietet eine hohe Kompressionsrate der XML-Metadaten ( bis zu 98\%) und einen schnellen Zugriff auf Daten Entitäten im komprimierten Stream
+\begin{figure}[h]
+\includegraphics [scale=0.55]{image004.jpg}
+\caption {MPEG-7 Aufbau}
+\end{figure}
+
+
+	\newpage
+	\section{DER METADATEN STANDARD EBUCore}
+	
+	\subsection{\\Einleitung\\}
+	Der EBUCore ist ein Metadatenset welches von der \emph{European Broadcasting Union (EBU)} entwickelt wurde. Die EBU ist ein Zusammenschluss von 74 Rundfunkanstalten  in 56 Ländern Europas, Nordafrikas und Vorderasiens. Dieser Zusammenschluss produziert z.B. auch den Eurovision Song Contest.\\ Der EBUCore ist eine Erweiterung des \emph{DublinCore}, welcher 1995 in Dublin/Ohio festgesetzt wurde. Der DublinCore spezifiziert eine Reihe von Metadaten zur beschreibung von Dokumenten im Internet.\\ Im Jahr 2000 war es das anfängliche Ziel der EBU den DublinCore auf Audioarchive zu übertragen. Dieses Ziel wurde 2008 erweitert. Das neue Ziel war es den EBUCore so zu erweitern, das man mit den Metadaten nicht nur Daten im Archiv beschreiben kann, sondern mit ihrer Hilfe auch Archive durch z.B. Suchmaschinen im Browser durchsuchen kann.\\Die EBU sagt, dass heutige Ziele nicht mehr auf Audioressourcen und Archive beschränkt ist.\\Der bekanntesten Einsatzort des EBUCore ist derzeit die \emph{Europeana}. Die Europeana ist ein Projekt welches darauf abzielt, das kulturelle Erbe Europas zu digitalisieren und für jedermann zugänglich zu machen. Mithilfe des Webportals hat man Zugriff auf viele Millionen multimediale Ressourcen aus Europa und der Welt.\\Damit man diese Ressourcen auch nach der gewünschten durchsuchen kann, braucht es ein einheitliches Metadaten Format für Europa.
+	
+	\subsection{\\Der Standard\\}
+	Der EBUCore ist eine minimale Liste von Attributen die man benötigt um eine multimediale Ressource zu beschreiben.Getreu dem Motto :\begin{quote}Wenn du's nicht findest, hast du's auch nicht.\end{quote} versucht die EBU durch den EBUCore einen allumfassenden Standard bereit zu stellen welcher eine Verbindung zwischen kulturellen Datenbanken, Produzenten multimedialer Ressourcen, Rundfunkanstalten, Archiven und Netzontologien herstellt.\\
+Auch der EBUCore nutzt das XML Format zur Repräsentation der Metainformation. Der Standard ist unter anderem in der EBU tech3293 spezifiziert.\\Anders als der MPEG-7 Standard muss der EBUCore komplett manuell erstellt werden. Dazu wird einfach ein XML-Instanz Dokument erstellt welches dem XML-Schema entsprechen muss.In \bf{Tabelle 1} kann man die Elemente des Standards und eventuelle Attribute sehen.\\
+
+\begin{tabular}{|c|c|c|}
+left & center & right\\
+\end{tabular}
+
+
 	\newpage
 	
 	\section{Verhältnis zwischen XML und RDF/OWL (Semantic Web) und SKOS für classification schemes}
