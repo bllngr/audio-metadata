@@ -1,8 +1,6 @@
 % import style file
 \input audiotechnik.sty
 
-\usepackage[normalem]{ulem}
-
 % information about this document
 \school{Bauhaus-Universität Weimar, Fakultät Medien, Lehrgebiet Audiotechnik SS 2011}
 \supervisor{Dr.-Ing. Günther Schatter}
@@ -33,7 +31,6 @@
 % Eigenleistung: 											2 Seiten
 % Further Work, Future Ausblick								1/2 Seite
 
-\usepackage{graphicx}
 \begin{document}
 	\maketitle
 	
@@ -128,14 +125,18 @@
 	\subsection{Page Numbering, Headers and Footers}
 	Do not include headers, footers or page numbers in your submission.
 	These will be added when the publications are assembled.
-
+		
+	% place this command somewhere in the first column of the last page
+	% in order to balance the columns on the last page
+	\balance
+	
 	\section{Figures/Captions}
 	Place tables/figures/images in text as close to the reference as possible
 	(see Figure~\ref{myfigure}). Figures may extend across both columns to a
 	maximum width of 17.78 cm (7").
 	\par
 	Captions should be Helvetica bold 9-point. They should be numbered (e.g.,
-	"Table 1"\ or "Figure 2"). Please note that the words "Table"\ and "Figure"\
+	"Table 1" or "Figure 2"). Please note that the words "Table" and "Figure"
 	are spelled out. Figure captions should be centered beneath the image or
 	picture, and table captions should be centered above the table body.
 	
@@ -204,7 +205,6 @@
 	
 	Der MPEG-7 Standard wurde 2002 von der \emph{Moving Picture Expert Group} als ISO/IEC 15938 verabschiedet. Im Gegensatz zu den früheren MPEG Standards (MPEG-1, MPEG-2 und MPEG-4) kein Kompressionsstandard für multimediale Daten sondern ein Metadaten Standard für selbige.\\Er bietet eine auf XML-Basierende umfangreiche Repräsentation von Metainformation für Audio- und Videodaten.\\Im folgenden wird der Standard im hinblick auf Audiosignale detailliert vorgestellt und seine automatisch generierbaren Aspekte vorgestellt.
 	
-<<<<<<< HEAD
 	\subsection{Inhalt}
 	
 	Der MPEG-7 Standard spezifiziert vier Bestandteile:
@@ -251,57 +251,57 @@ Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen 
 	
 	\subsection{\\Der Standard\\}
 	Der EBUCore ist eine minimale Liste von Attributen die man benötigt um eine multimediale Ressource zu beschreiben.Getreu dem Motto :\begin{quote}Wenn du's nicht findest, hast du's auch nicht.\end{quote} versucht die EBU durch den EBUCore einen allumfassenden Standard bereit zu stellen welcher eine Verbindung zwischen kulturellen Datenbanken, Produzenten multimedialer Ressourcen, Rundfunkanstalten, Archiven und Netzontologien herstellt.\\
-Auch der EBUCore nutzt das XML Format zur Repräsentation der Metainformation. Der Standard ist unter anderem in der EBU tech3293 spezifiziert.\\Anders als der MPEG-7 Standard muss der EBUCore komplett manuell erstellt werden. Dazu wird einfach ein XML-Instanz Dokument erstellt welches dem XML-Schema entsprechen muss.In \bf{Tabelle 1} kann man die Elemente des Standards und eventuelle Attribute sehen.\\
+Auch der EBUCore nutzt das XML Format zur Repräsentation der Metainformation. Der Standard ist unter anderem in der EBU tech3293 spezifiziert.\\Anders als der MPEG-7 Standard muss der EBUCore komplett manuell erstellt werden. Dazu wird einfach ein XML-Instanz Dokument erstellt welches dem XML-Schema entsprechen muss.\\Das XML-Schema definiert über 30 Tags welche zur Beschreibung der Ressource dienen. Dabei werden neben den üblichen Beschreibungsformen, wie Titel oder Sprache, auch Tags angeboten die Informationen über das physikalische oder digitale  Format, Version oder Herausgabe Historie. Diese Tags spiegeln hier beispielhaft das bestreben produzierenden und konsumierende Gruppen unter einen Standard zusammen zu fassen.\\
+Es folgen nun zwei Beispiele wie ein XML-Instanz Dokument für ein Bild und eine Audioressource aussehen kann. Dabei kann man gut erkennen das der Standard komplett unabhängig von der zu beschreibenden Ressource fungiert.
 
-\begin{tabular}{|c|c|c|}
-left & center & right\\
-\end{tabular}
+\begin{lstlisting}[caption=Beispiel-XML EBUCore für Albrecht Dürers Bild: Adam und Eva]{Name}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi=
+"http://www.w3.org/2001/XMLSchema-instance" ...>
+
+  <ebuCoreMain>
+    <coreMetadataType>
+      <title>Adam and Eve</title>
+      <creator>Duerer, Albrecht (german painter, 1471-1528) </creator>
+      <description>...</description>
+      <source>VADS</source>  
+      <rights>Rights Owner: The Bowes Museum Castle, Co. Durham</rights>
+      <provider>CultureGrid; UK</provider>
+      <subject>religion (Adam and Eve)</subject>
+      <type>Physical Object</type>
+    </coreMetadataType>
+  </ebuCoreMain>
+</schema>
+\end{lstlisting}
 
 
-=======
-	% TODO: richtig platzieren!
-	\begin{figure*}[htbp]
-		\includegraphics[width=\textwidth]{images/dublin_core.pdf}
-		\caption{Kernelemente des Dublin-Core-Metadaten-Sets}
-		\label{dublincore}
-	\end{figure*}
-	
->>>>>>> 054d73520d590d0772883f47e37fe03bad46cbf5
+\begin{lstlisting}[caption=Beispiel-XML EBUCore für die Europahymne]{Name}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi=
+"http://www.w3.org/2001/XMLSchema-instance" ...>
+
+  <ebuCoreMain>
+    <coreMetadataType>
+      <title>Europahymne ; Hymne europeen ; European anthem</title>
+      <creator>van Beethoven, Ludwig</creator>
+      <description>...</description>
+      <source>Dernier mouvement de la Neuvieme symphonie (Ode a la joie) / van Beethoven, Ludwig (compositeur); ...</source>  
+      <rights>Centre Virtuel de la Connaissance sur l Europe (CVCE)</rights>
+      <provider>ASSETS; Luxembourg</provider>
+      <language>fr; en; de</language>
+      <identifier>doi_cvce_audiovisual_4b6e5671-a0fc-45fa-8368-f84e4817dc14></identifier>
+      <type>Physical Object</type>
+    </coreMetadataType>
+  </ebuCoreMain>
+</schema>
+\end{lstlisting}
+
+
 	\newpage
 	
-	%%%%%%%%%%%%%%%%%% hier geht's los %%%%%%%%%%%%%%%%%%
-	
-	\section{EBUCore Metadata Set [B]}
-	Im Februar 1950 schlossen sich öffentliche Rundfunkanstalten aus 23 europäischen Ländern zu einer Union zusammen, um \enquote{eine Interessensgruppe für den Rundfunk in technischen und rechtlichen Belangen} zu gründen. Heute gehören der Europäischen Rundfunkunion \emph{(European Broadcasting Union, EBU)} 74 Mitglieder aus 56 Ländern Europas sowie 36 assoziierte Mitglieder der ganzen Welt an. (Stand: Mai 2011).
-% http://www.ebu.ch/CMSimages/en/WEB_A4_Member-list_UER_05-2011_EN_tcm6-71972.pdf 05. Juli 2011, 13:57
-% und http://www.ebu.ch/en/union/news/2010/tcm_6-67336.php 05. Juli 2011, 14:09
-
-	
-	Im Jahr 2000 kam der Wunsch auf, die Spezifikation des \emph{Dublin-Core}-Metadaten-Sets auf Audio-Archive zu übertragen. 	% http://tech.ebu.ch/lang/en/MetadataEbuCore, 05. Juli 2011, 23:19
-
-	Dublin Core ist ein 1994 entworfener Standard für Metadaten mit dem Ziel, Dokumente im Internet leicher auffindbar zu machen. Dafür werden 15 Kernfelder zur Verfügung gestellt, welche technische Daten, eine Beschreibung des Inhalts, Personen und Rechte sowie die Vernetzung und den Lebenszyklus eines Dokuments beschreiben.
-	
-	% http://de.wikipedia.org/w/index.php?title=Dublin_Core&oldid=88976612 vom  18. Mai 2011, 11:47. Abgerufen 05. Juliu 2011, 23:38.
-	
-	Im Jahr 2008 wurde dieser Wunsch erweitert auf die Spezifiaktion eines gemeinsamen Kerns an Informationen zur Durchsuchbarkeit von Archiven aller Art. Heute ist EBUCore spezifiert als \enquote{eine minimale Liste an Attributen zur Beschreibung von Audio- und Videoressourcen für eine große Auswahl an Rundfunkanwendungen, inklusive Archivierung, Austausch und Veröffentlichung}. Dafür werden die 15 Kernelemente von Dublin Core erweitert:
-	
-	Outline:
-	
-	\sout{EBU} \\
-	\sout{Aufbau auf Dublin Core} \\
-	\sout{Dublin Core} \\
-	\sout{Scope} \\
-	Aufbau \\
-	Grafik der Verwertungskette (Archive) \\
-	und noch irgendeine Grafik?! 
-	
-	
-	\newpage
-			
-	% place this command somewhere in the first column of the last page
-	% in order to balance the columns on the last page
-	\balance
-	\section{Verhältnis zwischen XML und RDF/OWL (Semantic Web) und SKOS für classification schemes [B]}
+	\section{Verhältnis zwischen XML und RDF/OWL (Semantic Web) und SKOS für classification schemes}
 	Absatz
 
 	\subsection{RDF, RDFS und RDF/XML}
