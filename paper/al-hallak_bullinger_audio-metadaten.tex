@@ -314,8 +314,13 @@ Ein weiterer Mechanismus der für das Semantic Web genutzt werden könnte, ist d
 	\newpage
 	\section{Vergleich}
 	\subsection{Nutzer}
+	Die verschiedenen Standards haben auch verschiedene Nutzer. Der \textbf{MPEG-7} Standard wird vorrangig von Algorithmen zur Suche verwendet um zum Beispiel "Query By Humming" Anfragen zu bearbeiten. Das liegt auch daran dass fertige MPEG-7 XML Dateien durch die vielen Descriptors welche beispielsweise im 10 ms Intervall eine Audioressource abtasten.\\Der \textbf{EBUCore} kann durch seine einfache Bedienung und seine dennoch große Vielfalt von jedem eingesetzt werden. Derzeit ist der größte Nutzer die Europeana und die angeschlossenen Projekte wie: ECLAP, Digital Contemporary Art, EUScreen und andere.\\\textbf{NewsML-G2} ist ein Standard der nur von Nachrichtenagenturen eingestzt wird. Er ist weltweit im Einsatz und dient zur kommunikation zwischen den Agenturen.\\\textbf{TV-Anytime} wird vom Endverbraucher genutzt. Er kann über TV-Anytime Informaionen zur Ressource erhalten und auch selber Informationen wie zum Beispiel Meinungen eintragen.
 	\subsection{Abstraktionsgrad}
+Der Abstraktionsgrad der Standards unterscheidet sich stark. \textbf{MPEG-7} hat einen sehr hohen Abstraktionsgrad. Er bietet die Möglichkeit die Audioressource über die physikalischen Eigenschaften hinaus auf ein hohes Niveau bis zur Notenerkennung und Automatischer Spracherkennung ( Automatic Speech Recognition, ASR).\textbf{TV-Anytime} ist ebenfalls auf einem hohen Level der Abstraktion. Es bietet neben der Beschreibung von Inhalten, Regie und Mitwirkende auch die Möglichkeit Bewertungen von Benutzern über den Inhalt einzusehen und so auch eine Kommunikation statt eine reine Distribution zu gewährleisten.\\Dagegen sind die beiden anderen Spezifikationen eher auf einer geringen Stufe der Abstraktion. \textbf{EBUCore} und \textbf{NewsML-G2} bieten lediglich eine Beschreibung der Ressource auf allgemeiner Ebene wie Inhalt und beteiligte Personen. Dies ist jedoch keinerlei Nachteil, da sie genau dafür entwickelt wurden.\\
+
 	\subsection{Generierung}
+Man kann die Standards hinsichtlich der Generierung in zwei Gruppen teilen. Die eine Gruppe bildet der \textbf{MPEG-7} Standard welcher mithilfe von Applikationen und Werkzeugen nahezu automatisch generiert werden kann.\\Die andere Gruppe sind \textbf{EBUCore}, \textbf{TV-Anytime} und \textbf{NewsML-G2}. Diese lassen sich nicht automatisch generieren sonder werden manuell erzeugt.
+
 	\subsection{Stelle in der Verwertungskette}
 	\subsection{Zweck}
 	
@@ -331,12 +336,12 @@ Ein weiterer Mechanismus der für das Semantic Web genutzt werden könnte, ist d
 	Auf diese soll hier jedoch nicht eingegangen werden, da in der Praxis überwiegend die Serialisierung mittels Extensible Markup Language (XML) genutzt wird.
 	
 	\subsubsection{RDF/XML}
-	Dieses vom World Wide Web Consortium (W3C) standardisierte Format wird RDF/XML gennant. \prettyref{lis:rdfxml} zeigt ein Beispiel für obige Beziehung in RDF/XML. Dabei wurden zusätzlich einige Elemente der Dublin-Core-Spezifikation genutzt.
+	Dieses vom W3C standardisierte Format wird RDF/XML gennant. \prettyref{lis:rdfxml} zeigt ein Beispiel für obige Beziehung in RDF/XML. Dabei wurden zusätzlich einige Elemente der Dublin-Core-Spezifikation genutzt.
 	% TODO: placement on the same page!
 	\lstinputlisting[float=*b, language=XML, caption=Beispiel für XML/RDF, label=lis:rdfxml]{files/schiller.rdf}
 
 	\subsubsection{RDFS}
-	RDF benötigen zur \emph{Interpretation} der dargestellten Beziehungen ein gemeinsames Vokabular, zum Beispiel Dublin Core. RDF Schema (RDFS) stellen dafür ein Vokabular zur Verfügung, mit dessen Hilfe innerhalb von RDFS-Dokumenten Aussagen über semantische Beziehungen der Termini gemacht werden können. % Es handelt sich dabei nicht um ein thematisches Vokabular; vielmehr 
+	RDF benötigen zur \emph{Interpretation} der dargestellten Beziehungen ein gemeinsames Vokabular, zum Beispiel Dublin Core. RDF Schema (RDFS) stellen dafür ein Vokabular zur Verfügung, mit dessen Hilfe innerhalb von RDFS-Dokumenten Aussagen über semantische Beziehungen der Termini gemacht werden können. Es handelt sich dabei nicht um ein thematisches Vokabular; vielmehr 
 
 	\subsection{OWL}
 	Web Ontology Language (OWL) ist eine Spezifikation des W3C, die entwickelt wurde, um...
@@ -348,47 +353,19 @@ Ein weiterer Mechanismus der für das Semantic Web genutzt werden könnte, ist d
 	% http://www.semaweb.org/dokumente/w3/TR/2004/REC-owl-features-20040210-DE.html, 28.05.2011, 13:13
 	% Hitzler, Pascal, et. al. Semantic Web,	Berlin [u.a.] Springer, 2008, Seite 127
 	
-	%\subsubsection{OWL 2}
+	\subsubsection{OWL 2}
 	% TODO
 	
 	\subsection{SKOS}
 	Simple Knowledge Organization System (SKOS) ist eine vom W3C spezifierte formale Sprache zum Verteilen und Verlinken von Informationsystemen wie Thesauri, Taxonomien und Normdateien im Web. SKOS basiert auf RDF und RDFS.
 	% http://www.w3.org/TR/skos-reference/, 28.05.2011, 15:27
 	
-	Es soll die Nutzung von concept schemes im Web im Vergleich zu OWL erleichtern. OWL verfolgt das Ziel, komplexe Konzeptstrukturen auszudrücken, um so ausführliche Metadaten zu generieren und Schlussfolgerungswerkzeuge zu unterstützen. Die Erstellung sinnvoller Web-Ontologien ist jedoch sehr aufwändig, und in vielen Fällen werden die zahlreichen Möglichkeiten der OWL nicht benötigt. Deshalb kann hier der Einsatz von SKOS vorteilhaft sein.
+	...
+	
+	SKOS soll die Nutzung von concept schemes im Web im Vergleich zu OWL erleichtern. OWL verfolgt das Ziel, komplexe Konzeptstrukturen auszudrücken, um so ausführliche Metadaten zu generieren und Schlussfolgerungswerkzeuge zu unterstützen. Die Erstellung sinnvoller Web-Ontologien ist jedoch sehr aufwändig, und in vielen Fällen werden die zahlreichen Möglichkeiten der OWL nicht benötigt. Deshalb kann hier der Einsatz von SKOS vorteilhaft sein.
 	
 	% http://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System vom 13:30, 12 May 2011. 28. Mai 2011, 15:37
 	
-	\section{TODO}
-	RDF(S), OWL und SKOS nutzen häufig die Elemente der Dublin-Core-Spezifikation zur detaillierteren semantischen Beschreibung von Inhalten. Diese Datenmodelle für Metadaten und deren Beziehungen bieten selber nur wenige semantische Elemente für die Ressourcenidentifikatoren und greifen deshalb auf das Metadatenset von Dublin Core zurück.
-	
-	Dabei wird der Unterschied zwischen den genannten Metadatensets und den Datenmodellen in diesem Kapitel deutlich. MPEG-7, EBUCore, etc. pp. %TODO
-	stellen in der Regel nur Elemente zur Beschreibung einer einzelnen Ressource bereit. Diese wird -- unter Umständen sehr detailliert -- sowohl unter technischen als auch unter inhaltlichen Aspekten beschrieben.
-	
-	Um solche Ressourcen jedoch in Beziehung zueinander setzen zu können bedarf es einer Ontologie oder einem semantischen Datenmodell. 
-	
-	
-
-	\newpage
-	
-	\section{Media Annotations Working Group}
-	Dieser Überblick zeigt, dass es verschiedene Metadaten-Standards für Audio-, Video und Bildsignale gibt, die unterschiedliche Zielstellungen, Herangehensweisen und Lösungsansätze bieten. Allerdings gibt es auch größere Schnittmengen zwischen den Standards, und für vollständige (semantische) Angaben kann es nötig sein, Elemente aus verschiedenen Metadaten-Sets zu nutzen.
-	
-	Aus diesem Grund hat das W3C eine Arbeitsgruppe gegründet, die sich mit der Zusammenführung genannter Standards (und weiteren) befasst. Die \emph{Media Annotations Working Group (MAWG)} hat sich zum Ziel gesetzt, die Interoperabilität zwischen Metadaten-Standards für Multimediaressourcen zu verbessern.
-	
-	Dazu hat die Gruppe eine Menge von Standards identifiziert, die untereinander kompatibel sein sollen. Dazu gehören neben den hier genannten Dublin- und EBUCore, IPTC % TODO: did we?
-	sowie MPEG-7 zum Beispiel auch der für Fotos genutzte EXIF-Satz sowie anbieterspezifische Metadaten wie die von Youtube, Apple und Adobe. Eine vollständige Übersicht unterstützer Standards bietet [X]. %http://www.w3.org/2008/WebVideo/Annotations/drafts/ontology10/CR/mappings_tested/ % TODO!
-	
-	Um dieses Ziel zu erreichen hat die Arbeitsgrupppe eine \enquote{Media-Ontologie} geschrieben, in welche sowohl semantische als auch syntaktische Abbildungen der wichtigsten Elemente aus den einzelnen Metadaten-Spezifikationen existieren sollen. Ein vollständiges Mapping aller Elemente wird dabei ausdrücklich nicht angestrebt.
-	% http://mawg.joanneum.at/web/mawg.html#mission, 28. Juli 2011, 9:28
-	% http://www.w3.org/2008/01/media-annotations-wg.html#scope, 28. Juli 2011, 9:43
-	
-	Mit dieser Ontologie soll es beispielsweise möglich sein, ID3-Tags 
-	
-	Diese \emph{lingua franca} der Metadaten soll auserdem eine Programmierschnittstelle (Applikation Programming Interface, API) bieten, um die extrahierten Informationen leicht abrufen zu können. Dabei soll in einer ersten Iteration zumindest der lesende Zugriff über JavaScript ermöglicht werden; weitere Versionen werden zusätzlich (schreibenden) Zugriff mittels JavaScript und einem einfachen RDF-Format bieten.
-	
-	
-
 	\bibliographystyle{phcpc}
 	\bibliography{references}
 \end{document}
