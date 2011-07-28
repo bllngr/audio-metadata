@@ -221,6 +221,27 @@ Die beiden Beispiele sind sehr minimalistisch aber sie dienen dem Zweck einen gr
 EBUCore liefert auch Bestandteile die für das Semantic Web genutzt werden können. Mit dem <realtion> -- Tag ist es möglich einzelne Ressourcen mit anderen in Verbindung zu setzen. Man kann aus verschiedenen Typen die gewünschte Relation ausdrücken. Beispiele hierfür sind : isPartOf, isRequiredBy oder isFormatOf.\\
 Ein weiterer Mechanismus der für das Semantic Web genutzt werden könnte, ist der <identifier> -- Tag. Mit diesem kann eine eindeutige Referenz auf die Ressource vermerkt werden, wie zum Beispiel ein DOI.
 	\newpage
+	\section{DER METADATENSTANDARD TV-ANYTIME}
+	\subsection{\\Einleitung\\}
+Der TV-Anytime Standard ist vom TV-Anytime Forum spezifiziert worden. Das Forum setzt sich aus über 80 Mitgliedern aus Industrie und Unterhaltungsbranche zusammen. Die Ziele des Forums waren eine einheitlichen Standard für Audio-Visuelle Daten zu generieren, welcher dem Verbraucher eine bessere Übersicht über die Digitalen Programme liefern und auf ihn zugeschnittene Medieninhalte präsentieren soll.
+Der Standard soll in Systemen wie beispielsweise dem Personal Digital Recorder (PDR) Anwendung finden. Die Industrie ist daran Unterhaltungsindustrie ist daran interessiert damit der Verbraucher ihre Formate auch findet. Die Gerätehersteller wollen einen einheitlichen Standard um nicht für jedes System ein eigenes Gerät auf den Markt bringen zu müssen. Und letztlich der Verbraucher profitiert davon, da er Programme die ihn interessieren könnten präsentiert und eine strukturierte Übersicht über die Inhalte bekommt.
+
+\subsection{\\Der Standard\\}
+Der TV-Anytime Standard ist so aufgebaut, das ein Nutzer mithilfe seines Gerätes schnell und einfach erfahren kann, welche Sendungen gerade angeboten werden, und welchen Inhalt diese haben. Dabei ist jedoch zu beachten,dass im Gegensatz zu den anderen Standards, hier auch ein werbender Charakter in die Beschreibung mit eingeht, damit der Nutzer auch von der Beschreibung zum Inhalt geführt wird.\\TV-Anytime nutzt XML-Schema Dateien, welche mithilfe der MPEG-7 Description Definition Language (DDL) erzeugt wurden.Diese definieren eine Dokumentenstruktur die sich aus verschiedenen Teilen zusammen wie zum Beispiel Informationen über:
+\begin{itemize}
+	\item Programme
+	\item Programmgruppen(z.B. Serien)
+	\item Schauspieler
+	\item und weitere
+\end{itemize}
+ Damit ein Instanzdokument des Standards korrekt ist, muss man mindestens einen Programmtitel angeben, alle anderen Sektionen sind optional. Das TV-Anytime Forum empfiehlt jedoch zusätzlich noch mindestens die Zusammenfassung, das Genre, die Sprache und die Beteiligten Personen ( Schauspieler, Regisseur, Produzent etc.) mit anzugeben.\\Die Eben genannten Bestandteile fallen alle in das ProgramDescription Tag der XML Datei. Dieser beinhaltet auch noch Definitionen um Programme die mit dem aktuellen vergleichbar sind oder damit in Beziehung stehen zu vermerken, oder auch Trailer für die Ressource anzugeben.
+ 
+ \subsection{\\Der Content Referencing Identifier (CRID)\\}
+Die Idee vom CRID ist das man in den Metadaten einer Ressource einen eindeutigen Verweis zur Ressource schafft. So kann man mit dem CRID über die Metadaten direkt zur Ressource gelangen. Auch hier war der Standard notwendig um eine einheitliche Identifikation der Ressourcen der verschiedenen Rundfunkanstalten und andere Inhaltslieferanten zu schaffen. Der CRID ist wie eine URL aufgebaut: \texttt{crid://<name>/<daten>}. \texttt{<name>} ist dabei wie ein DNS Name aufgebaut.
+\subsection{\\Nutzerinformationen\\} 
+TV-Anytime spezifiziert Möglichkeiten um die Gewohnheiten der Nutzer hinsichtlich ihrer Programmauswahl zu speichern. Auch hier bedient der Standard sich der beiden Tags von MPEG-7 "user preference" und "usage history". Das Forum hat sich für auf ein einheitliches Modell zur Nutzerdatenspeicherung und Austauschen der Daten geeinigt.\\Das soll dazu dienen um dem Nutzer anhand seiner Gewohnheiten weitere Sendungen anzubieten die ihn interessieren könnten. Jedoch sollen diese Informationen auch dazu eingesetzt werden dem Nutzer personalisierte Werbung zu präsentieren.\\
+Mithilfe von Usage History und User Preferences wird es ermöglicht zu erfassen wie der Nutzer sich Inhalte anschaut, wann er Vorspult, auf Pause drückt oder etwas Aufnimmt. Mit diesen Informationen kann dann ein Nutzerprofil erstellt werden um das Angebot zu filtern, oder selbständig Inhalte aufzunehmen von denen der Recorder oder das zugrunde liegende System meint, es könnte den Nutzer interessieren.
+	\newpage
 	\section{Vergleich}
 	\subsection{Nutzer}
 	Die verschiedenen Standards haben auch verschiedene Nutzer. Der \textbf{MPEG-7} Standard wird vorrangig von Algorithmen zur Suche verwendet um zum Beispiel \enquote{Query By Humming} Anfragen zu bearbeiten. Das liegt auch daran dass fertige MPEG-7 XML Dateien durch die vielen Descriptors welche beispielsweise im 10 ms Intervall eine Audioressource abtasten.
