@@ -20,14 +20,18 @@
 	\authoremail{julius.bullinger@uni-weimar.de}
 }
 
+%TODO: Eigene Leistung (Kindersicherheit), Verbindung Einleitung--Hauptteil, zwei Absätze RDF, einen Absatz MAWG, QUELLEN (!)
+
 % Abstrakt													1/2 Spalte
 % Einleitung und kleine Scheißgrafik						3/2 Spalte
-% Übersicht Standards, Vergleich, Schnittmengengrafiken
-% EBUCore													1 Seite
 % MPEG-7													1 Seite
+% EBUCore													1 Seite
 % TV-Anytime												1 Seite
-% Weitere													1/2 Seite
+% ITPC NewsML-G2                                            1 Seite
+% Übersicht Standards, Vergleich, Schnittmengengrafiken
 % Exkurs: Semantik Web, SKOS, RDF, OWL						1/2 bis 1 Seite
+% MAWG                                                      1 Seite
+
 % Eigenleistung: 											2 Seiten
 % Further Work, Future Ausblick								1/2 Seite
 
@@ -41,9 +45,9 @@
 	\subsection{Stichwörter}
 	Audio, Metadaten, MPEG-7, EBUcore, TV-Anytime, IPTC NewsML-G2, MAWG, RDF, RDFS, OWL, SKOS, Semantisches Web
 	
-	\section{Einleitung [A, B]}
+	\section{Einleitung \hfill [A, B]}
 	
-	Metadaten sind Daten über Daten. Sie bieten die Möglichkeit, semantische und syntaktische Informationen über eine Ressource zu beschreiben, speichern, verwalten und abzurufen.
+	Metadaten sind Daten über Daten. Sie bieten die Möglichkeit, semantische und syntaktische Informationen über eine Ressource zu beschreiben, zu speichern, zu verwalten und abzurufen.
 	
 	Sie können in unterschiedlichsten Bereichen eingesetzt werden. Dazu zählen heutzutage vor allem das Internet und neue Medien, Rundfunk, Archive, Bibliotheken und Museen. Sie finden Anwendung in der gesamten Verwertungskette einer Ressource, von der Produktion über die Verarbeitung und Publikation bis hin zur Archivierung.
 
@@ -57,19 +61,9 @@
 		\label{myfigure}
 	\end{figure}
 	
-	\fbox{
-		\begin{minipage}[t]{\columnwidth} 
-			\vspace{3cm}
-			Hier kommt noch eine Hinführung zu den Standards hin.
-			\vspace{3cm}
-			\hspace{\columnwidth}
-		\end{minipage}
-	}
+	\clearpage
 	
-	\section {Der Metadaten Standard MPEG-7 [A]} 
-	
-	\subsection {Einleitung}
-	
+	\section {Der Metadaten Standard MPEG-7 \hfill [A]} 
 	Der MPEG-7 Standard wurde 2002 von der \emph{Moving Picture Expert Group} als ISO/IEC 15938 verabschiedet. Im Gegensatz zu den früheren MPEG Standards (MPEG-1, MPEG-2 und MPEG-4) kein Kompressionsstandard für multimediale Daten sondern ein Metadaten Standard für selbige.
 	
 	Er bietet eine auf XML-Basierende umfangreiche Repräsentation von Metainformation für Audio- und Videodaten.
@@ -79,7 +73,6 @@
 	\subsection{Inhalt}
 	
 	Der MPEG-7 Standard spezifiziert vier Bestandteile:
-	
 	\begin{itemize}
 		\item \emph{Descriptors}
 		\item \emph{Descriptor Schemes}
@@ -88,23 +81,21 @@
 	\end{itemize}
 	
 	\subsubsection {Descriptors (D)}
-	
 Der erste Teil des Standards sind \emph{Descriptors}. Diese arbeiten auf räumlichen, zeitlichen oder physischen Segmenten der Ressource und  halten Daten zur Repräsentation eines Merkmals der Audiodatei.
 
 	Dabei werden entweder gleiche Zeitintervalle der Ressource beschrieben oder sie wird in Segmente unterteilt und und Ähnlichkeiten und Differenzen werden aufgezeichnet. Beispiele für solche Descriptors sind der \emph{AudioWaveform} Descriptor welcher einem Intervall des Signals z.B. maximaler und minimaler Tonfrequenz zuweist.
 
 	Diese Strukturen sind Low-Level und beinhalten lediglich die technischen Eigenschaften der Audio-Ressource. Es werden derzeit 17 \emph{Feature Descriptors} und ein spezieller \emph{Silence Descriptor} standardisiert. Diese 18 Strukturen sind in Untergruppen Organisiert (siehe Abb. 2).
 
+	\begin{figure}[h]
+		\includegraphics [scale=0.65]{image061.jpg}
+		\caption {Low-Level Descriptors in MPEG-7}
+	\end{figure}
 
-\begin{figure}[h]
-\includegraphics [scale=0.65]{image061.jpg}
-\caption {Low-Level Descriptors in MPEG-7}
-\end{figure}
-
-Der \emph{Silence Descriptor} ist einfach die Darstellung das an dieser Stelle kein signifikanter Ton vorhanden ist und kann z.B. dazu eingesetzt werden ein Segment mit dieser Eigenschaft nicht weiter zu bearbeiten was die Erstellung der Metadaten effizienter macht.
+	Der \emph{Silence Descriptor} ist einfach die Darstellung das an dieser Stelle kein signifikanter Ton vorhanden ist und kann z.B. dazu eingesetzt werden ein Segment mit dieser Eigenschaft nicht weiter zu bearbeiten was die Erstellung der Metadaten effizienter macht.
 
 	\subsubsection{Description Schemes (DS)}
-		Der MPEG-7 Standard liefert neben den Low-Level Descriptors auch High-Level Description Tools in Form von \emph{Description Schemes}. Description Schemes beschreiben die Audiodatei auf einer höheren Abstraktionsebene und setzen dafür Descriptors und andere Description Schemes in Beziehung zueinander.
+	Der MPEG-7 Standard liefert neben den Low-Level Descriptors auch High-Level Description Tools in Form von \emph{Description Schemes}. Description Schemes beschreiben die Audiodatei auf einer höheren Abstraktionsebene und setzen dafür Descriptors und andere Description Schemes in Beziehung zueinander.
 		
 		Desciption Schemes nutzen die Rohdaten aus Descriptors und anderen Description Schemes um Audiodaten auf einem hohen Abstraktionsgrad zu beschreiben. Sodass Description Schemes die Struktur und die Semantik liefern in welcher die Descriptors und andere Description Schemes in Verbindung gesetzt wird. Damit kann man neben der rein technischen Low-Level Beschreibung der Ressource auch Charakteristiken wie Ton- , Instrumenten- und Melodie-Erkennung erzeugen und vermerken. 
 				
@@ -113,24 +104,25 @@ Neben den bereits genannten Möglichkeiten bietet der MPEG-7 Standard ein weiter
 
 	Die Description Definition Language ist eine Erweiterung von XML-Schema.
 
-\subsubsection{Binary Format für MPEG-7 BiM}
-
-Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen zu können. Das BiM bietet eine hohe Kompressionsrate der XML-Metadaten ( bis zu 98\%) und einen schnellen Zugriff auf Daten Entitäten im komprimierten Stream
+	\subsubsection{Binary Format für MPEG-7 BiM}
+	Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen zu können. Das BiM bietet eine hohe Kompressionsrate der XML-Metadaten ( bis zu 98\%) und einen schnellen Zugriff auf Daten Entitäten im komprimierten Stream.
 
 \begin{figure}[h]
 	\includegraphics [scale=0.55]{image004.jpg}
 	\caption {MPEG-7 Aufbau}
 \end{figure}
 
-	%\newpage
-	\section{IPTC NewsML-G2 [B]}
+	\newpage
+	\section{IPTC NewsML-G2 \hfill [B]}
 	Im Jahr 2000 hat sich der Weltverband der Nachrichtenagenturen (International Press Telecommunications Council, IPTC) das Ziel gesetzt, technische Standards für den verbesserten Austausch von Nachrichten zu entwickeln und zu unterhalten. Damit soll der Austausch von Nachrichten, Sportinformationen und Angaben über Ereignisse auf internationaler Ebene verheinheitlich, vereinfacht und koordiniert werden.
 	
+	\subsection{News Architecture G2}
 	Um dieses Ziel zu erreichen hat der IPTC die Metadatenarchitektur \textbf{News Architecture G2} entwickelt, mit der der Austausch jeglicher Form von Nachrichten -- seinen es Bilder, Videos, Audioaufzeichnungen oder Texte in allen erdenklichen Formen auszutauschen. Dabei setzt der Verband auf ein Framework von drei Teilspezifikationen: EventML-G2 zur Beschreibung von Events, SportML-G2 für Sportveranstaltungen und NewsML-G2 zur Repräsentation und Verwaltung von Nachrichtenbeiträgen.
 	
 	Bei der Spezifikation wurde besonderes Augenmerk auf die Interoperabiltät zwischen Produzenten und Abnehmer, Erweiterbarkeit, Klarheit und einfache Speicherung gelegt. Zur Repräsentation wurde dafür das XML-Format gewählt.
 	
-	Die Architektur definiert dafür Blöcke (\enquote{building blocks}), welche mehrere Nachrichtenelemente (\enquote{news items}) enthalten können. Die Blöcke beschreiben die Art der Metadaten sowie Art und Struktur der (Nachrichten-)Elemente. Dabei können andere Elemente referenziert werden:
+	\subsection{Der Standard}
+	Die Architektur definiert Blöcke (\enquote{building blocks}), welche mehrere Ressourcen referenzieren können. Die Blöcke beschreiben die Art der Metadaten sowie Art und Struktur der (Nachrichten-)Elemente. Dabei können andere Elemente referenziert werden. Im Substandard NewsML-G2 heißen diese Elemente \texttt{newsItems}. Ein newsItem besteht aus vier Teilen:
 	
 	\begin{figure}[htbp]
 		\includegraphics[width=\columnwidth]{images/iptc_news_item.pdf}
@@ -138,11 +130,18 @@ Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen 
 		\label{myfigure}
 	\end{figure}
 
-	Jedes newsItem muss dabei von einer eindeutigen ID gekennzeichnet sein sowie mit einer Versionsnummer.
-
-	\begin{lstlisting}[caption=Beispiel-XML IPTC NewsML-G2 für die Europäische Hymne]{Name}
+	Jedes newsItem muss dabei von einer eindeutigen ID gekennzeichnet sein sowie mit einer Versionsnummer. Damit können die Elemente identifiert und Relationen zu anderen Elementen aufgebaut werden. Die Versionsnummer ermöglicht es, Änderungen der Elemente nachvollziehen zu können. Außerdem werden im Top-Level-Element Urheberangaben und Lizenzinformationen untergebracht.
+	
+	Das itemMeta-Element enthält Meta-Informationen über die Ressource. Dazu gehören beispielsweise die Klasse sowie Eigenschaften, die für die korrekte Handhabung nötig sind.
+	
+	Die Content-Metadata-Struktur beschreibt die Ressource selbst: Administrative Angaben wie Quellen und Zeitangaben sowie deskriptive Angaben zu Kategorie und Inhalten.
+	
+	Die Content-Struktur enthält schließlich die Ressource direkt (im Falle von Textdokumenten), oder aber einen Verweis auf die Ressource in Form einer URI.
+	
+	\prettyref{lis:newsml-item} zeigt ein (unvollständiges) Beispiel für eine Audioressource:
+		\begin{lstlisting}[language=XML, caption=Beispiel-XML IPTC NewsML-G2 für die Europäische Hymne, label=lis:newsml-item]
 <newsItem xmlns="http://iptc.org/std/newsml/2006-10-01/"
-   guid="urn:doi:cvce_audiovisual_4b6e5671-a0fc-45fa-8368-f84e4817dc14"
+   guid="urn:doi:[...]"
    version="1">
   <catalogRef />
   <itemMeta />
@@ -159,11 +158,28 @@ Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen 
 </newsItem>
 	\end{lstlisting}
 
-
-	%\newpage
-	\section{DER METADATEN STANDARD EBUCore [A]}
+	Eine Besonderheit der NewsML-G2 ist die Möglichkeit so genannter \emph{Packages}. Diese \texttt{packageItem}s erlauben es, mehrere Elemente zur einer zusammengehörigen Einheit zu gruppieren. Damit können beispielsweise verschiedene Varianten einer Resource zusammengefasst werden. Eine andere Variante ist das Bündeln unterschiedlicher Ressourcen zu einem spezifischen Themengebiet (beispielsweise \enquote{Radiobeträge über elektronische Musik}). Eine packageItem ist dabei analog zu newsItems aufgebaut. Der letzte Teil (\texttt{groupSet}) verweist dann per Referenz auf die einzelnen Ressourcen.
 	
-	\subsection{Einleitung}
+	\begin{lstlisting}[language=XML, caption=Beispiel-XML IPTC NewsML-G2 für ein Package, label=lis:newsml-package]
+<packageItem>
+	<itemMeta.../>
+	<contentMeta.../>
+	<groupSet root="G1">
+		<group id="G1" role="group:first">
+			<itemRef ... Item A ... />
+			<itemRef ... Item B ... />
+			<groupRef idref="G2" />
+		</group>
+		<group id="G2" role="group:second">
+			<itemRef ... Item C ... />
+			<itemRef ... Item D ... />
+		</group>
+	</groupSet>
+</packageItem>
+	\end{lstlisting}
+
+	\newpage
+	\section{DER METADATEN STANDARD EBUCore \hfill [A]}
 	Der EBUCore ist ein Metadatenset welches von der \emph{European Broadcasting Union (EBU)} entwickelt wurde. Die EBU ist ein Zusammenschluss von 74 Rundfunkanstalten  in 56 Ländern Europas, Nordafrikas und Vorderasiens. Dieser Zusammenschluss produziert z.B. auch den Eurovision Song Contest.
 	
 	Der EBUCore ist eine Erweiterung des \emph{DublinCore}, welcher 1995 in Dublin/Ohio festgesetzt wurde. Der DublinCore spezifiziert eine Reihe von Metadaten zur beschreibung von Dokumenten im Internet.
@@ -187,12 +203,10 @@ Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen 
 	
 	Es folgen nun zwei Beispiele wie ein XML-Instanz Dokument für ein Bild und eine Audioressource aussehen kann. Dabei kann man gut erkennen das der Standard komplett unabhängig von der zu beschreibenden Ressource fungiert.
 
-\begin{lstlisting}[caption=Beispiel-XML EBUCore für Albrecht Dürers Bild: Adam und Eva]{Name}
-
+	\begin{lstlisting}[caption=Beispiel-XML EBUCore für Albrecht Dürers Bild: Adam und Eva]{Name}
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns:xsi=
 "http://www.w3.org/2001/XMLSchema-instance" ...>
-
   <ebuCoreMain>
     <coreMetadataType>
       <title>Adam and Eve</title>
@@ -206,15 +220,13 @@ Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen 
     </coreMetadataType>
   </ebuCoreMain>
 </schema>
-\end{lstlisting}
+	\end{lstlisting}
 
 
-\begin{lstlisting}[caption=Beispiel-XML EBUCore für die Europahymne]{Name}
-
+	\begin{lstlisting}[caption=Beispiel-XML EBUCore für die Europahymne]{Name}
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns:xsi=
 "http://www.w3.org/2001/XMLSchema-instance" ...>
-
   <ebuCoreMain>
     <coreMetadataType>
       <title>Europahymne</title>
@@ -237,17 +249,16 @@ Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen 
     </coreMetadataType>
   </ebuCoreMain>
 </schema>
-\end{lstlisting}
+	\end{lstlisting}
 
-Die beiden Beispiele sind sehr minimalistisch aber sie dienen dem Zweck einen großen Vorteil des EBUCore zu zeigen, die einfache Bedienung bei gleichzeitig relativ großer Beschreibungsmöglichkeit. Durch die weiteren Tags und zugehörige Attribute kann man von der Erstellung der Ressource (zum Beispiel mit dem Version-Tag) über die Auslieferung ( zum Beispiel Title oder Creator Tag)  bis zur Archivierung ( zum Beispiel das Subject Tag ).
-\subsection{EBUCore und Semantic Web}
+	Die beiden Beispiele sind sehr minimalistisch aber sie dienen dem Zweck einen großen Vorteil des EBUCore zu zeigen, die einfache Bedienung bei gleichzeitig relativ großer Beschreibungsmöglichkeit. Durch die weiteren Tags und zugehörige Attribute kann man von der Erstellung der Ressource (zum Beispiel mit dem Version-Tag) über die Auslieferung ( zum Beispiel Title oder Creator Tag)  bis zur Archivierung ( zum Beispiel das Subject Tag ).
 
-EBUCore liefert auch Bestandteile die für das Semantic Web genutzt werden können. Mit dem <realtion> -- Tag ist es möglich einzelne Ressourcen mit anderen in Verbindung zu setzen. Man kann aus verschiedenen Typen die gewünschte Relation ausdrücken. Beispiele hierfür sind : isPartOf, isRequiredBy oder isFormatOf.
+	\subsection{EBUCore und Semantic Web}
+	EBUCore liefert auch Bestandteile die für das Semantic Web genutzt werden können. Mit dem <realtion>-Tag ist es möglich einzelne Ressourcen mit anderen in Verbindung zu setzen. Man kann aus verschiedenen Typen die gewünschte Relation ausdrücken. Beispiele hierfür sind : isPartOf, isRequiredBy oder isFormatOf.
 
-	Ein weiterer Mechanismus der für das Semantic Web genutzt werden könnte, ist der <identifier> -- Tag. Mit diesem kann eine eindeutige Referenz auf die Ressource vermerkt werden, wie zum Beispiel ein DOI.
-	%\newpage
-	\section{DER METADATENSTANDARD TV-ANYTIME [A]}
-	\subsection{Einleitung}
+	Ein weiterer Mechanismus der für das Semantic Web genutzt werden könnte, ist der <identifier>-Tag. Mit diesem kann eine eindeutige Referenz auf die Ressource vermerkt werden, wie zum Beispiel ein DOI.
+
+	\section{DER METADATENSTANDARD TV-ANYTIME \hfill [A]}
 	Der TV-Anytime Standard ist vom TV-Anytime Forum spezifiziert worden. Das Forum setzt sich aus über 80 Mitgliedern aus Industrie und Unterhaltungsbranche zusammen. Die Ziele des Forums waren eine einheitlichen Standard für Audio-Visuelle Daten zu generieren, welcher dem Verbraucher eine bessere Übersicht über die Digitalen Programme liefern und auf ihn zugeschnittene Medieninhalte präsentieren soll.
 	
 	Der Standard soll in Systemen wie beispielsweise dem Personal Digital Recorder (PDR) Anwendung finden. Die Industrie ist daran Unterhaltungsindustrie ist daran interessiert damit der Verbraucher ihre Formate auch findet. Die Gerätehersteller wollen einen einheitlichen Standard um nicht für jedes System ein eigenes Gerät auf den Markt bringen zu müssen. Und letztlich der Verbraucher profitiert davon, da er Programme die ihn interessieren könnten präsentiert und eine strukturierte Übersicht über die Inhalte bekommt.
@@ -277,8 +288,10 @@ EBUCore liefert auch Bestandteile die für das Semantic Web genutzt werden könn
 	
 	Mithilfe von Usage History und User Preferences wird es ermöglicht zu erfassen wie der Nutzer sich Inhalte anschaut, wann er Vorspult, auf Pause drückt oder etwas Aufnimmt. Mit diesen Informationen kann dann ein Nutzerprofil erstellt werden um das Angebot zu filtern, oder selbständig Inhalte aufzunehmen von denen der Recorder oder das zugrunde liegende System meint, es könnte den Nutzer interessieren.
 
-	%\newpage
-	\section{Vergleich [A, B]}
+
+	\section{Vergleich der Metadaten-Standards \hfill [A, B]}
+	Trotz ähnlichen Aufbaus und einigen Gemeinsamkeiten unterscheiden sich die Standards teilweise eklatant in ihrer Herangehensweise und vor allem in der Zielsetzung. Das folgende Kapitel soll eine grundlegende Übersicht über die Ähnlichkeiten und Unterschiede der Metadaten sowie deren Unterschiede aufzeigen:
+	
 	\subsection{Nutzer}
 	Die verschiedenen Standards haben auch verschiedene Nutzer. Der \textbf{MPEG-7} Standard wird vorrangig von Algorithmen zur Suche verwendet um zum Beispiel \enquote{Query By Humming} Anfragen zu bearbeiten. Das liegt auch daran dass fertige MPEG-7 XML Dateien durch die vielen Descriptors welche beispielsweise im 10 ms Intervall eine Audioressource abtasten.
 	
@@ -316,57 +329,42 @@ Der Abstraktionsgrad der Standards unterscheidet sich stark. \textbf{MPEG-7} hat
 	
 	\textbf{TV-Anytime} soll die Fragmentierung herstellerspezifischer Metdaten für Empfangsgeräte homogenisieren. 
 	
-	%\newpage
-	\section{Verhältnis zwischen XML und RDF/OWL (Semantic Web) und SKOS für classification schemes [B]}
-	\subsection{RDF, RDFS und RDF/XML}
+	\section{Verhältnis zwischen XML und RDF/OWL (Semantic Web) und SKOS für classification schemes \hfill [B]}
+	\subsection{RDF, RDFS und RDF/XML}\cite{Hitzler:2008}
 	\subsubsection{RDF}
 	Das Resource Description Framework (RDF) ist eine universelle formale Sprache zur Beschreibung von strukturierten Informationen (ursprünglich: Metadaten im Web). Mittels RDF werden Information über so genannte Ressourcen gespeichert. Ressourcen sind Uniform Ressource Identifiers (URIs), die eine Quelle referenzieren. Diese Ressourcen können Webseiten, ISBNs für Bücher und Zeitschriften oder DOIs (zum Beispiel doi:10.1000/182) sein.
 	
-	Metadaten werden als Tripel -- Subjekt, Prädikat, Objekt -- gespeichert. Dabei wird die Beziehung zwischen Subjekt und Objekt angegeben. Die Beziehung \enquote{\enquote{Die Glocke} ist von Friedrich Schiller geschrieben} ergibt das Tripel \enquote{Die Glocke} (Subjekt), \enquote{ist geschrieben von} (Prädikat), \enquote{Friedrich Schiller} (Objekt). Zur Notation nutzt man häufig die (inoffizielle) \emph{Turtle}-Syntax. % Obiges Trippel sieht in dann so aus: % TODO: evtl. Turtle-Syntax
+	Metadaten werden als Tripel -- Subjekt, Prädikat, Objekt -- gespeichert. Dabei wird die Beziehung zwischen Subjekt und Objekt angegeben. Die Beziehung \enquote{\enquote{Die Glocke} ist von Friedrich Schiller geschrieben} ergibt das Tripel \enquote{Die Glocke} (Subjekt), \enquote{ist geschrieben von} (Prädikat), \enquote{Friedrich Schiller} (Objekt). Zur Notation nutzt man häufig die (inoffizielle) \emph{Turtle}-Syntax.
 	Auf diese soll hier jedoch nicht eingegangen werden, da in der Praxis überwiegend die Serialisierung mittels Extensible Markup Language (XML) genutzt wird.
 	
 	\subsubsection{RDF/XML}
 	Dieses vom W3C standardisierte Format wird RDF/XML gennant. \prettyref{lis:rdfxml} zeigt ein Beispiel für obige Beziehung in RDF/XML. Dabei wurden zusätzlich einige Elemente der Dublin-Core-Spezifikation genutzt.
 	% TODO: placement on the same page!
-	%\lstinputlisting[float=*b, language=XML, caption=Beispiel für XML/RDF, label=lis:rdfxml]{files/schiller.rdf}
+	\lstinputlisting[caption=Beispiel für XML/RDF, label=lis:rdfxml]{files/schiller.rdf}
 
 	\subsubsection{RDFS}
-	RDF benötigen zur \emph{Interpretation} der dargestellten Beziehungen ein gemeinsames Vokabular, zum Beispiel Dublin Core. RDF Schema (RDFS) stellen dafür ein Vokabular zur Verfügung, mit dessen Hilfe innerhalb von RDFS-Dokumenten Aussagen über semantische Beziehungen der Termini gemacht werden können. Es handelt sich dabei nicht um ein thematisches Vokabular; vielmehr 
+	RDF benötigen zur \emph{Interpretation} der dargestellten Beziehungen ein gemeinsames Vokabular, zum Beispiel Dublin Core. RDF Schema (RDFS) stellen dafür ein Vokabular zur Verfügung, mit dessen Hilfe innerhalb von RDFS-Dokumenten Aussagen über semantische Beziehungen der Termini gemacht werden können.
 
-	\subsection{OWL}
-	Web Ontology Language (OWL) ist eine Spezifikation des W3C, die entwickelt wurde, um...
+	\subsection{OWL\cite{W3C:2004:OWL}}
+	Web Ontology Language (OWL) ist eine Spezifikation des W3C, die entwickelt wurde, um Ontologien erstellen und verbreiten zu können.
 	
 	OWL basiert auf RDF/XML, fügt jedoch weitere Ausdrücke zur Beschreibung von Eigenschaften und Klassen hinzu. Damit werden Aussagen ähnlich der Prädikatenlogik ermöglicht (Disjunktheit, Aussage "genau einer", Äquivalenz...)
 	
 	OWL bietet drei Untersprachen mit steigender Ausdrucksstärke (\emph{OWL Lite}, \emph{DL} (description logic) und \emph{Full}) und unterschiedlichen Zielgruppen. OWL Lite ist eine (echte) Teilsprache von OWL DL, welches wiederrum eine (echte) Teilsprache von OWL Full ist.
 	
-	% http://www.semaweb.org/dokumente/w3/TR/2004/REC-owl-features-20040210-DE.html, 28.05.2011, 13:13
-	% Hitzler, Pascal, et. al. Semantic Web,	Berlin [u.a.] Springer, 2008, Seite 127
-	
-	\subsubsection{OWL 2}
-	% TODO
-	
-	\subsection{SKOS}
+	\subsection{SKOS\cite{W3C:2009:SKOS}}
 	Simple Knowledge Organization System (SKOS) ist eine vom W3C spezifierte formale Sprache zum Verteilen und Verlinken von Informationsystemen wie Thesauri, Taxonomien und Normdateien im Web. SKOS basiert auf RDF und RDFS.
-	% http://www.w3.org/TR/skos-reference/, 28.05.2011, 15:27
-	
-	SKOS soll die Nutzung von concept schemes im Web im Vergleich zu OWL erleichtern. OWL verfolgt das Ziel, komplexe Konzeptstrukturen auszudrücken, um so ausführliche Metadaten zu generieren und Schlussfolgerungswerkzeuge zu unterstützen. Die Erstellung sinnvoller Web-Ontologien ist jedoch sehr aufwändig, und in vielen Fällen werden die zahlreichen Möglichkeiten der OWL nicht benötigt. Deshalb kann hier der Einsatz von SKOS vorteilhaft sein.
+		
+	SKOS soll die Nutzung von concept schemes im Web im Vergleich zu OWL erleichtern. OWL verfolgt das Ziel, komplexe Konzeptstrukturen auszudrücken, um so ausführliche Metadaten zu generieren und Schlussfolgerungswerkzeuge zu unterstützen. Die Erstellung sinnvoller Web-Ontologien ist jedoch sehr aufwändig, und in vielen Fällen werden die zahlreichen Möglichkeiten der OWL nicht benötigt. Deshalb kann hier der Einsatz von SKOS vorteilhaft sein.\cite{WP:2011:SKOS}
 
-	% http://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System vom 13:30, 12 May 2011. 28. Mai 2011, 15:37
-
-	\section{Media Annotations Working Group [B]}
+	\section{Media Annotations Working Group \hfill [B]}
 	Dieser Überblick zeigt, dass es verschiedene Metadaten-Standards für Audio-, Video und Bildsignale gibt, die unterschiedliche Zielstellungen, Herangehensweisen und Lösungsansätze bieten. Allerdings gibt es auch größere Schnittmengen zwischen den Standards, und für vollständige (semantische) Angaben kann es nötig sein, Elemente aus verschiedenen Metadaten-Sets zu nutzen.
 	
 	Aus diesem Grund hat das W3C eine Arbeitsgruppe gegründet, die sich mit der Zusammenführung genannter Standards (und weiteren) befasst. Die \emph{Media Annotations Working Group (MAWG)} hat sich zum Ziel gesetzt, die Interoperabilität zwischen Metadaten-Standards für Multimediaressourcen zu verbessern.
 	
-	Dazu hat die Gruppe eine Menge von Standards identifiziert, die untereinander kompatibel sein sollen. Dazu gehören neben den hier genannten Dublin- und EBUCore, IPTC % TODO: did we?
-	sowie MPEG-7 zum Beispiel auch der für Fotos genutzte EXIF-Satz sowie anbieterspezifische Metadaten wie die von Youtube, Apple und Adobe. Eine vollständige Übersicht unterstützer Standards bietet [X]. %http://www.w3.org/2008/WebVideo/Annotations/drafts/ontology10/CR/mappings_tested/ % TODO!
+	Dazu hat die Gruppe eine Menge von Standards identifiziert, die untereinander kompatibel sein sollen. Dazu gehören neben den hier genannten Dublin- und EBUCore, IPTC	sowie MPEG-7 zum Beispiel auch der für Fotos genutzte EXIF-Satz sowie anbieterspezifische Metadaten wie die von Youtube, Apple und Adobe. Eine vollständige Übersicht unterstützer Standards bietet \cite{W3C:MAWG:mappings}.
 	
-	Um dieses Ziel zu erreichen hat die Arbeitsgrupppe eine \enquote{Media-Ontologie} geschrieben, in welche sowohl semantische als auch syntaktische Abbildungen der wichtigsten Elemente aus den einzelnen Metadaten-Spezifikationen existieren sollen. Ein vollständiges Mapping aller Elemente wird dabei ausdrücklich nicht angestrebt.
-	% http://mawg.joanneum.at/web/mawg.html#mission, 28. Juli 2011, 9:28
-	% http://www.w3.org/2008/01/media-annotations-wg.html#scope, 28. Juli 2011, 9:43
-	
-	Mit dieser Ontologie soll es beispielsweise möglich sein, ID3-Tags %TODO
+	Um dieses Ziel zu erreichen hat die Arbeitsgrupppe eine \enquote{Media-Ontologie} geschrieben, in welche sowohl semantische als auch syntaktische Abbildungen der wichtigsten Elemente aus den einzelnen Metadaten-Spezifikationen existieren sollen. Ein vollständiges Mapping aller Elemente wird dabei ausdrücklich nicht angestrebt.\cite{W3C:MAWG:mission} \cite{W3C:MAWG:scope}
 	
 	Diese \emph{lingua franca} der Metadaten soll auserdem eine Programmierschnittstelle (Applikation Programming Interface, API) bieten, um die extrahierten Informationen leicht abrufen zu können. Dabei soll in einer ersten Iteration zumindest der lesende Zugriff über JavaScript ermöglicht werden; weitere Versionen werden zusätzlich (schreibenden) Zugriff mittels JavaScript und einem einfachen RDF-Format bieten.
 	
