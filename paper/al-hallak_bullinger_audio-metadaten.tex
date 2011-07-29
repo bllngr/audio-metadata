@@ -57,9 +57,18 @@
 		\label{myfigure}
 	\end{figure}
 	
+	\fbox{
+		\begin{minipage}[t]{\columnwidth} 
+			\vspace{3cm}
+			Hier kommt noch eine Hinführung zu den Standards hin.
+			\vspace{3cm}
+			\hspace{\columnwidth}
+		\end{minipage}
+	}
+	
 	\section {Der Metadaten Standard MPEG-7} 
 	
-	\subsection {\\Einleitung}
+	\subsection {Einleitung}
 	
 	Der MPEG-7 Standard wurde 2002 von der \emph{Moving Picture Expert Group} als ISO/IEC 15938 verabschiedet. Im Gegensatz zu den früheren MPEG Standards (MPEG-1, MPEG-2 und MPEG-4) kein Kompressionsstandard für multimediale Daten sondern ein Metadaten Standard für selbige.
 	
@@ -84,7 +93,7 @@ Der erste Teil des Standards sind \emph{Descriptors}. Diese arbeiten auf räumli
 
 	Dabei werden entweder gleiche Zeitintervalle der Ressource beschrieben oder sie wird in Segmente unterteilt und und Ähnlichkeiten und Differenzen werden aufgezeichnet. Beispiele für solche Descriptors sind der \emph{AudioWaveform} Descriptor welcher einem Intervall des Signals z.B. maximaler und minimaler Tonfrequenz zuweist.
 
-	Diese Strukturen sind Low-Level und beinhalten lediglich die technischen Eigenschaften der Audio-Ressource. Es werden derzeit 17 \emph{Feature Descriptors} und ein spezieller \emph{Silence Descriptor} standardisiert. Diese 18 Strukturen sind in Untergruppen Organisiert (siehe Abb. 2).\\
+	Diese Strukturen sind Low-Level und beinhalten lediglich die technischen Eigenschaften der Audio-Ressource. Es werden derzeit 17 \emph{Feature Descriptors} und ein spezieller \emph{Silence Descriptor} standardisiert. Diese 18 Strukturen sind in Untergruppen Organisiert (siehe Abb. 2).
 
 
 \begin{figure}[h]
@@ -113,7 +122,7 @@ Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen 
 	\caption {MPEG-7 Aufbau}
 \end{figure}
 
-	\newpage
+	%\newpage
 	\section{IPTC NewsML-G2}
 	
 	Im Jahr 2000 hat sich der Weltverband der Nachrichtenagenturen (International Press Telecommunications Council, IPTC) das Ziel gesetzt, technische Standards für den verbesserten Austausch von Nachrichten zu entwickeln und zu unterhalten. Damit soll der Austausch von Nachrichten, Sportinformationen und Angaben über Ereignisse auf internationaler Ebene verheinheitlich, vereinfacht und koordiniert werden.
@@ -152,16 +161,32 @@ Das BiM ist entwickelt worden um die Metadaten schnell übertragen und streamen 
 	\end{lstlisting}
 
 
-	\newpage
+	%\newpage
 	\section{DER METADATEN STANDARD EBUCore}
 	
-	\subsection{\\Einleitung}
-	Der EBUCore ist ein Metadatenset welches von der \emph{European Broadcasting Union (EBU)} entwickelt wurde. Die EBU ist ein Zusammenschluss von 74 Rundfunkanstalten  in 56 Ländern Europas, Nordafrikas und Vorderasiens. Dieser Zusammenschluss produziert z.B. auch den Eurovision Song Contest.\\ Der EBUCore ist eine Erweiterung des \emph{DublinCore}, welcher 1995 in Dublin/Ohio festgesetzt wurde. Der DublinCore spezifiziert eine Reihe von Metadaten zur beschreibung von Dokumenten im Internet.\\ Im Jahr 2000 war es das anfängliche Ziel der EBU den DublinCore auf Audioarchive zu übertragen. Dieses Ziel wurde 2008 erweitert. Das neue Ziel war es den EBUCore so zu erweitern, das man mit den Metadaten nicht nur Daten im Archiv beschreiben kann, sondern mit ihrer Hilfe auch Archive durch z.B. Suchmaschinen im Browser durchsuchen kann.\\Die EBU sagt, dass heutige Ziele nicht mehr auf Audioressourcen und Archive beschränkt sind.\\Der bekanntesten Einsatzort des EBUCore ist derzeit die \emph{Europeana}. Die Europeana ist ein Projekt welches darauf abzielt, das kulturelle Erbe Europas zu digitalisieren und für jedermann zugänglich zu machen. Mithilfe des Webportals hat man Zugriff auf viele Millionen multimediale Ressourcen aus Europa und der Welt.\\Damit man diese Ressourcen auch nach der gewünschten durchsuchen kann, braucht es ein einheitliches Metadaten Format für Europa.
+	\subsection{Einleitung}
+	Der EBUCore ist ein Metadatenset welches von der \emph{European Broadcasting Union (EBU)} entwickelt wurde. Die EBU ist ein Zusammenschluss von 74 Rundfunkanstalten  in 56 Ländern Europas, Nordafrikas und Vorderasiens. Dieser Zusammenschluss produziert z.B. auch den Eurovision Song Contest.
+	
+	Der EBUCore ist eine Erweiterung des \emph{DublinCore}, welcher 1995 in Dublin/Ohio festgesetzt wurde. Der DublinCore spezifiziert eine Reihe von Metadaten zur beschreibung von Dokumenten im Internet.
+	
+	Im Jahr 2000 war es das anfängliche Ziel der EBU den DublinCore auf Audioarchive zu übertragen. Dieses Ziel wurde 2008 erweitert. Das neue Ziel war es den EBUCore so zu erweitern, das man mit den Metadaten nicht nur Daten im Archiv beschreiben kann, sondern mit ihrer Hilfe auch Archive durch z.B. Suchmaschinen im Browser durchsuchen kann.
+	
+	Die EBU sagt, dass heutige Ziele nicht mehr auf Audioressourcen und Archive beschränkt sind.
+	
+	Der bekanntesten Einsatzort des EBUCore ist derzeit die \emph{Europeana}. Die Europeana ist ein Projekt welches darauf abzielt, das kulturelle Erbe Europas zu digitalisieren und für jedermann zugänglich zu machen. Mithilfe des Webportals hat man Zugriff auf viele Millionen multimediale Ressourcen aus Europa und der Welt.
+	
+	Damit man diese Ressourcen auch nach der gewünschten durchsuchen kann, braucht es ein einheitliches Metadaten Format für Europa.
 	
 	\subsection{Der Standard}
-	Der EBUCore ist eine minimale Liste von Attributen die man benötigt um eine multimediale Ressource zu beschreiben.Getreu dem Motto :\begin{quote}Wenn du's nicht findest, hast du's auch nicht.\end{quote} versucht die EBU durch den EBUCore einen allumfassenden Standard bereit zu stellen welcher eine Verbindung zwischen kulturellen Datenbanken, Produzenten multimedialer Ressourcen, Rundfunkanstalten, Archiven und Netzontologien herstellt.\\
-Auch der EBUCore nutzt das XML Format zur Repräsentation der Metainformation. Der Standard ist unter anderem in der EBU tech3293 spezifiziert.\\Anders als der MPEG-7 Standard muss der EBUCore komplett manuell erstellt werden. Dazu wird einfach ein XML-Instanz Dokument erstellt welches dem XML-Schema entsprechen muss.\\Das XML-Schema definiert über 30 Tags welche zur Beschreibung der Ressource dienen. Dabei werden neben den üblichen Beschreibungsformen, wie Titel oder Sprache, auch Tags angeboten die Informationen über das physikalische oder digitale  Format, Version oder Herausgabe Historie. Diese Tags spiegeln hier beispielhaft das bestreben produzierenden und konsumierende Gruppen unter einen Standard zusammen zu fassen.\\
-Es folgen nun zwei Beispiele wie ein XML-Instanz Dokument für ein Bild und eine Audioressource aussehen kann. Dabei kann man gut erkennen das der Standard komplett unabhängig von der zu beschreibenden Ressource fungiert.
+	Der EBUCore ist eine minimale Liste von Attributen die man benötigt um eine multimediale Ressource zu beschreiben.Getreu dem Motto :\begin{quote}Wenn du's nicht findest, hast du's auch nicht.\end{quote} versucht die EBU durch den EBUCore einen allumfassenden Standard bereit zu stellen welcher eine Verbindung zwischen kulturellen Datenbanken, Produzenten multimedialer Ressourcen, Rundfunkanstalten, Archiven und Netzontologien herstellt.
+	
+	Auch der EBUCore nutzt das XML Format zur Repräsentation der Metainformation. Der Standard ist unter anderem in der EBU tech3293 spezifiziert.
+	
+	Anders als der MPEG-7 Standard muss der EBUCore komplett manuell erstellt werden. Dazu wird einfach ein XML-Instanz Dokument erstellt welches dem XML-Schema entsprechen muss.
+	
+	Das XML-Schema definiert über 30 Tags welche zur Beschreibung der Ressource dienen. Dabei werden neben den üblichen Beschreibungsformen, wie Titel oder Sprache, auch Tags angeboten die Informationen über das physikalische oder digitale  Format, Version oder Herausgabe Historie. Diese Tags spiegeln hier beispielhaft das bestreben produzierenden und konsumierende Gruppen unter einen Standard zusammen zu fassen.
+	
+	Es folgen nun zwei Beispiele wie ein XML-Instanz Dokument für ein Bild und eine Audioressource aussehen kann. Dabei kann man gut erkennen das der Standard komplett unabhängig von der zu beschreibenden Ressource fungiert.
 
 \begin{lstlisting}[caption=Beispiel-XML EBUCore für Albrecht Dürers Bild: Adam und Eva]{Name}
 
@@ -218,30 +243,41 @@ Es folgen nun zwei Beispiele wie ein XML-Instanz Dokument für ein Bild und eine
 Die beiden Beispiele sind sehr minimalistisch aber sie dienen dem Zweck einen großen Vorteil des EBUCore zu zeigen, die einfache Bedienung bei gleichzeitig relativ großer Beschreibungsmöglichkeit. Durch die weiteren Tags und zugehörige Attribute kann man von der Erstellung der Ressource (zum Beispiel mit dem Version-Tag) über die Auslieferung ( zum Beispiel Title oder Creator Tag)  bis zur Archivierung ( zum Beispiel das Subject Tag ).
 \subsection{EBUCore und Semantic Web}
 
-EBUCore liefert auch Bestandteile die für das Semantic Web genutzt werden können. Mit dem <realtion> -- Tag ist es möglich einzelne Ressourcen mit anderen in Verbindung zu setzen. Man kann aus verschiedenen Typen die gewünschte Relation ausdrücken. Beispiele hierfür sind : isPartOf, isRequiredBy oder isFormatOf.\\
-Ein weiterer Mechanismus der für das Semantic Web genutzt werden könnte, ist der <identifier> -- Tag. Mit diesem kann eine eindeutige Referenz auf die Ressource vermerkt werden, wie zum Beispiel ein DOI.
-	\newpage
-	\section{DER METADATENSTANDARD TV-ANYTIME}
-	\subsection{\\Einleitung\\}
-Der TV-Anytime Standard ist vom TV-Anytime Forum spezifiziert worden. Das Forum setzt sich aus über 80 Mitgliedern aus Industrie und Unterhaltungsbranche zusammen. Die Ziele des Forums waren eine einheitlichen Standard für Audio-Visuelle Daten zu generieren, welcher dem Verbraucher eine bessere Übersicht über die Digitalen Programme liefern und auf ihn zugeschnittene Medieninhalte präsentieren soll.
-Der Standard soll in Systemen wie beispielsweise dem Personal Digital Recorder (PDR) Anwendung finden. Die Industrie ist daran Unterhaltungsindustrie ist daran interessiert damit der Verbraucher ihre Formate auch findet. Die Gerätehersteller wollen einen einheitlichen Standard um nicht für jedes System ein eigenes Gerät auf den Markt bringen zu müssen. Und letztlich der Verbraucher profitiert davon, da er Programme die ihn interessieren könnten präsentiert und eine strukturierte Übersicht über die Inhalte bekommt.
+EBUCore liefert auch Bestandteile die für das Semantic Web genutzt werden können. Mit dem <realtion> -- Tag ist es möglich einzelne Ressourcen mit anderen in Verbindung zu setzen. Man kann aus verschiedenen Typen die gewünschte Relation ausdrücken. Beispiele hierfür sind : isPartOf, isRequiredBy oder isFormatOf.
 
-\subsection{\\Der Standard\\}
-Der TV-Anytime Standard ist so aufgebaut, das ein Nutzer mithilfe seines Gerätes schnell und einfach erfahren kann, welche Sendungen gerade angeboten werden, und welchen Inhalt diese haben. Dabei ist jedoch zu beachten,dass im Gegensatz zu den anderen Standards, hier auch ein werbender Charakter in die Beschreibung mit eingeht, damit der Nutzer auch von der Beschreibung zum Inhalt geführt wird.\\TV-Anytime nutzt XML-Schema Dateien, welche mithilfe der MPEG-7 Description Definition Language (DDL) erzeugt wurden.Diese definieren eine Dokumentenstruktur die sich aus verschiedenen Teilen zusammen wie zum Beispiel Informationen über:
-\begin{itemize}
-	\item Programme
-	\item Programmgruppen(z.B. Serien)
-	\item Schauspieler
-	\item und weitere
-\end{itemize}
- Damit ein Instanzdokument des Standards korrekt ist, muss man mindestens einen Programmtitel angeben, alle anderen Sektionen sind optional. Das TV-Anytime Forum empfiehlt jedoch zusätzlich noch mindestens die Zusammenfassung, das Genre, die Sprache und die Beteiligten Personen ( Schauspieler, Regisseur, Produzent etc.) mit anzugeben.\\Die Eben genannten Bestandteile fallen alle in das ProgramDescription Tag der XML Datei. Dieser beinhaltet auch noch Definitionen um Programme die mit dem aktuellen vergleichbar sind oder damit in Beziehung stehen zu vermerken, oder auch Trailer für die Ressource anzugeben.
+	Ein weiterer Mechanismus der für das Semantic Web genutzt werden könnte, ist der <identifier> -- Tag. Mit diesem kann eine eindeutige Referenz auf die Ressource vermerkt werden, wie zum Beispiel ein DOI.
+	%\newpage
+	\section{DER METADATENSTANDARD TV-ANYTIME}
+	\subsection{Einleitung}
+	Der TV-Anytime Standard ist vom TV-Anytime Forum spezifiziert worden. Das Forum setzt sich aus über 80 Mitgliedern aus Industrie und Unterhaltungsbranche zusammen. Die Ziele des Forums waren eine einheitlichen Standard für Audio-Visuelle Daten zu generieren, welcher dem Verbraucher eine bessere Übersicht über die Digitalen Programme liefern und auf ihn zugeschnittene Medieninhalte präsentieren soll.
+	
+	Der Standard soll in Systemen wie beispielsweise dem Personal Digital Recorder (PDR) Anwendung finden. Die Industrie ist daran Unterhaltungsindustrie ist daran interessiert damit der Verbraucher ihre Formate auch findet. Die Gerätehersteller wollen einen einheitlichen Standard um nicht für jedes System ein eigenes Gerät auf den Markt bringen zu müssen. Und letztlich der Verbraucher profitiert davon, da er Programme die ihn interessieren könnten präsentiert und eine strukturierte Übersicht über die Inhalte bekommt.
+
+\subsection{Der Standard}
+	Der TV-Anytime Standard ist so aufgebaut, das ein Nutzer mithilfe seines Gerätes schnell und einfach erfahren kann, welche Sendungen gerade angeboten werden, und welchen Inhalt diese haben. Dabei ist jedoch zu beachten,dass im Gegensatz zu den anderen Standards, hier auch ein werbender Charakter in die Beschreibung mit eingeht, damit der Nutzer auch von der Beschreibung zum Inhalt geführt wird.
+	
+	TV-Anytime nutzt XML-Schema Dateien, welche mithilfe der MPEG-7 Description Definition Language (DDL) erzeugt wurden.Diese definieren eine Dokumentenstruktur die sich aus verschiedenen Teilen zusammen wie zum Beispiel Informationen über:
+	\begin{itemize}
+		\item Programme
+		\item Programmgruppen(z.B. Serien)
+		\item Schauspieler
+		\item und weitere
+	\end{itemize}
+
+	Damit ein Instanzdokument des Standards korrekt ist, muss man mindestens einen Programmtitel angeben, alle anderen Sektionen sind optional. Das TV-Anytime Forum empfiehlt jedoch zusätzlich noch mindestens die Zusammenfassung, das Genre, die Sprache und die Beteiligten Personen ( Schauspieler, Regisseur, Produzent etc.) mit anzugeben.
+	
+	Die Eben genannten Bestandteile fallen alle in das ProgramDescription Tag der XML Datei. Dieser beinhaltet auch noch Definitionen um Programme die mit dem aktuellen vergleichbar sind oder damit in Beziehung stehen zu vermerken, oder auch Trailer für die Ressource anzugeben.
  
- \subsection{\\Der Content Referencing Identifier (CRID)\\}
-Die Idee vom CRID ist das man in den Metadaten einer Ressource einen eindeutigen Verweis zur Ressource schafft. So kann man mit dem CRID über die Metadaten direkt zur Ressource gelangen. Auch hier war der Standard notwendig um eine einheitliche Identifikation der Ressourcen der verschiedenen Rundfunkanstalten und andere Inhaltslieferanten zu schaffen. Der CRID ist wie eine URL aufgebaut: \texttt{crid://<name>/<daten>}. \texttt{<name>} ist dabei wie ein DNS Name aufgebaut.
-\subsection{\\Nutzerinformationen\\} 
-TV-Anytime spezifiziert Möglichkeiten um die Gewohnheiten der Nutzer hinsichtlich ihrer Programmauswahl zu speichern. Auch hier bedient der Standard sich der beiden Tags von MPEG-7 "user preference" und "usage history". Das Forum hat sich für auf ein einheitliches Modell zur Nutzerdatenspeicherung und Austauschen der Daten geeinigt.\\Das soll dazu dienen um dem Nutzer anhand seiner Gewohnheiten weitere Sendungen anzubieten die ihn interessieren könnten. Jedoch sollen diese Informationen auch dazu eingesetzt werden dem Nutzer personalisierte Werbung zu präsentieren.\\
-Mithilfe von Usage History und User Preferences wird es ermöglicht zu erfassen wie der Nutzer sich Inhalte anschaut, wann er Vorspult, auf Pause drückt oder etwas Aufnimmt. Mit diesen Informationen kann dann ein Nutzerprofil erstellt werden um das Angebot zu filtern, oder selbständig Inhalte aufzunehmen von denen der Recorder oder das zugrunde liegende System meint, es könnte den Nutzer interessieren.
-	\newpage
+ \subsection{Der Content Referencing Identifier (CRID)}
+	Die Idee vom CRID ist das man in den Metadaten einer Ressource einen eindeutigen Verweis zur Ressource schafft. So kann man mit dem CRID über die Metadaten direkt zur Ressource gelangen. Auch hier war der Standard notwendig um eine einheitliche Identifikation der Ressourcen der verschiedenen Rundfunkanstalten und andere Inhaltslieferanten zu schaffen. Der CRID ist wie eine URL aufgebaut: \texttt{crid://<name>/<daten>}. \texttt{<name>} ist dabei wie ein DNS Name aufgebaut.
+
+\subsection{Nutzerinformationen} 
+	TV-Anytime spezifiziert Möglichkeiten um die Gewohnheiten der Nutzer hinsichtlich ihrer Programmauswahl zu speichern. Auch hier bedient der Standard sich der beiden Tags von MPEG-7 "user preference" und "usage history". Das Forum hat sich für auf ein einheitliches Modell zur Nutzerdatenspeicherung und Austauschen der Daten geeinigt.
+	
+	Das soll dazu dienen um dem Nutzer anhand seiner Gewohnheiten weitere Sendungen anzubieten die ihn interessieren könnten. Jedoch sollen diese Informationen auch dazu eingesetzt werden dem Nutzer personalisierte Werbung zu präsentieren.
+	
+	Mithilfe von Usage History und User Preferences wird es ermöglicht zu erfassen wie der Nutzer sich Inhalte anschaut, wann er Vorspult, auf Pause drückt oder etwas Aufnimmt. Mit diesen Informationen kann dann ein Nutzerprofil erstellt werden um das Angebot zu filtern, oder selbständig Inhalte aufzunehmen von denen der Recorder oder das zugrunde liegende System meint, es könnte den Nutzer interessieren.
+	%\newpage
 	\section{Vergleich}
 	\subsection{Nutzer}
 	Die verschiedenen Standards haben auch verschiedene Nutzer. Der \textbf{MPEG-7} Standard wird vorrangig von Algorithmen zur Suche verwendet um zum Beispiel \enquote{Query By Humming} Anfragen zu bearbeiten. Das liegt auch daran dass fertige MPEG-7 XML Dateien durch die vielen Descriptors welche beispielsweise im 10 ms Intervall eine Audioressource abtasten.
@@ -253,10 +289,14 @@ Mithilfe von Usage History und User Preferences wird es ermöglicht zu erfassen 
 	\textbf{TV-Anytime} wird vom Endverbraucher genutzt. Er kann über TV-Anytime Informaionen zur Ressource erhalten und auch selber Informationen wie zum Beispiel Meinungen eintragen.
 
 	\subsection{Abstraktionsgrad}
-Der Abstraktionsgrad der Standards unterscheidet sich stark. \textbf{MPEG-7} hat einen sehr hohen Abstraktionsgrad. Er bietet die Möglichkeit die Audioressource über die physikalischen Eigenschaften hinaus auf ein hohes Niveau bis zur Notenerkennung und Automatischer Spracherkennung ( Automatic Speech Recognition, ASR).\textbf{TV-Anytime} ist ebenfalls auf einem hohen Level der Abstraktion. Es bietet neben der Beschreibung von Inhalten, Regie und Mitwirkende auch die Möglichkeit Bewertungen von Benutzern über den Inhalt einzusehen und so auch eine Kommunikation statt eine reine Distribution zu gewährleisten.\\Dagegen sind die beiden anderen Spezifikationen eher auf einer geringen Stufe der Abstraktion. \textbf{EBUCore} und \textbf{NewsML-G2} bieten lediglich eine Beschreibung der Ressource auf allgemeiner Ebene wie Inhalt und beteiligte Personen. Dies ist jedoch keinerlei Nachteil, da sie genau dafür entwickelt wurden.\\
+Der Abstraktionsgrad der Standards unterscheidet sich stark. \textbf{MPEG-7} hat einen sehr hohen Abstraktionsgrad. Er bietet die Möglichkeit die Audioressource über die physikalischen Eigenschaften hinaus auf ein hohes Niveau bis zur Notenerkennung und Automatischer Spracherkennung ( Automatic Speech Recognition, ASR).\textbf{TV-Anytime} ist ebenfalls auf einem hohen Level der Abstraktion. Es bietet neben der Beschreibung von Inhalten, Regie und Mitwirkende auch die Möglichkeit Bewertungen von Benutzern über den Inhalt einzusehen und so auch eine Kommunikation statt eine reine Distribution zu gewährleisten.
+
+	Dagegen sind die beiden anderen Spezifikationen eher auf einer geringen Stufe der Abstraktion. \textbf{EBUCore} und \textbf{NewsML-G2} bieten lediglich eine Beschreibung der Ressource auf allgemeiner Ebene wie Inhalt und beteiligte Personen. Dies ist jedoch keinerlei Nachteil, da sie genau dafür entwickelt wurden.
 
 	\subsection{Generierung}
-Man kann die Standards hinsichtlich der Generierung in zwei Gruppen teilen. Die eine Gruppe bildet der \textbf{MPEG-7} Standard welcher mithilfe von Applikationen und Werkzeugen nahezu automatisch generiert werden kann.\\Die andere Gruppe sind \textbf{EBUCore}, \textbf{TV-Anytime} und \textbf{NewsML-G2}. Diese lassen sich nicht automatisch generieren sonder werden manuell erzeugt.
+	Man kann die Standards hinsichtlich der Generierung in zwei Gruppen teilen. Die eine Gruppe bildet der \textbf{MPEG-7} Standard welcher mithilfe von Applikationen und Werkzeugen nahezu automatisch generiert werden kann.
+	
+	Die andere Gruppe sind \textbf{EBUCore}, \textbf{TV-Anytime} und \textbf{NewsML-G2}. Diese lassen sich nicht automatisch generieren sonder werden manuell erzeugt.
 
 	\subsection{Stelle in der Verwertungskette}
 	\textbf{MPEG-7} befindet sich im hinteren Teil der Verwertungskette. Durch die Anwendung von Algorithmen kann ein Benutzer direkt mit den MPEG-7-Daten interagieren. %TODO
@@ -276,7 +316,7 @@ Man kann die Standards hinsichtlich der Generierung in zwei Gruppen teilen. Die 
 	
 	\textbf{TV-Anytime} soll die Fragmentierung herstellerspezifischer Metdaten für Empfangsgeräte homogenisieren. 
 	
-	\newpage
+	%\newpage
 	\section{Verhältnis zwischen XML und RDF/OWL (Semantic Web) und SKOS für classification schemes}
 	Absatz
 
@@ -290,7 +330,7 @@ Man kann die Standards hinsichtlich der Generierung in zwei Gruppen teilen. Die 
 	\subsubsection{RDF/XML}
 	Dieses vom W3C standardisierte Format wird RDF/XML gennant. \prettyref{lis:rdfxml} zeigt ein Beispiel für obige Beziehung in RDF/XML. Dabei wurden zusätzlich einige Elemente der Dublin-Core-Spezifikation genutzt.
 	% TODO: placement on the same page!
-	\lstinputlisting[float=*b, language=XML, caption=Beispiel für XML/RDF, label=lis:rdfxml]{files/schiller.rdf}
+	%\lstinputlisting[float=*b, language=XML, caption=Beispiel für XML/RDF, label=lis:rdfxml]{files/schiller.rdf}
 
 	\subsubsection{RDFS}
 	RDF benötigen zur \emph{Interpretation} der dargestellten Beziehungen ein gemeinsames Vokabular, zum Beispiel Dublin Core. RDF Schema (RDFS) stellen dafür ein Vokabular zur Verfügung, mit dessen Hilfe innerhalb von RDFS-Dokumenten Aussagen über semantische Beziehungen der Termini gemacht werden können. Es handelt sich dabei nicht um ein thematisches Vokabular; vielmehr 
@@ -312,13 +352,11 @@ Man kann die Standards hinsichtlich der Generierung in zwei Gruppen teilen. Die 
 	Simple Knowledge Organization System (SKOS) ist eine vom W3C spezifierte formale Sprache zum Verteilen und Verlinken von Informationsystemen wie Thesauri, Taxonomien und Normdateien im Web. SKOS basiert auf RDF und RDFS.
 	% http://www.w3.org/TR/skos-reference/, 28.05.2011, 15:27
 	
-	...
-	
 	SKOS soll die Nutzung von concept schemes im Web im Vergleich zu OWL erleichtern. OWL verfolgt das Ziel, komplexe Konzeptstrukturen auszudrücken, um so ausführliche Metadaten zu generieren und Schlussfolgerungswerkzeuge zu unterstützen. Die Erstellung sinnvoller Web-Ontologien ist jedoch sehr aufwändig, und in vielen Fällen werden die zahlreichen Möglichkeiten der OWL nicht benötigt. Deshalb kann hier der Einsatz von SKOS vorteilhaft sein.
-	
+
 	% http://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System vom 13:30, 12 May 2011. 28. Mai 2011, 15:37
-	
-		\section{Media Annotations Working Group}
+
+	\section{Media Annotations Working Group}
 	Dieser Überblick zeigt, dass es verschiedene Metadaten-Standards für Audio-, Video und Bildsignale gibt, die unterschiedliche Zielstellungen, Herangehensweisen und Lösungsansätze bieten. Allerdings gibt es auch größere Schnittmengen zwischen den Standards, und für vollständige (semantische) Angaben kann es nötig sein, Elemente aus verschiedenen Metadaten-Sets zu nutzen.
 	
 	Aus diesem Grund hat das W3C eine Arbeitsgruppe gegründet, die sich mit der Zusammenführung genannter Standards (und weiteren) befasst. Die \emph{Media Annotations Working Group (MAWG)} hat sich zum Ziel gesetzt, die Interoperabilität zwischen Metadaten-Standards für Multimediaressourcen zu verbessern.
@@ -330,7 +368,7 @@ Man kann die Standards hinsichtlich der Generierung in zwei Gruppen teilen. Die 
 	% http://mawg.joanneum.at/web/mawg.html#mission, 28. Juli 2011, 9:28
 	% http://www.w3.org/2008/01/media-annotations-wg.html#scope, 28. Juli 2011, 9:43
 	
-	Mit dieser Ontologie soll es beispielsweise möglich sein, ID3-Tags 
+	Mit dieser Ontologie soll es beispielsweise möglich sein, ID3-Tags %TODO
 	
 	Diese \emph{lingua franca} der Metadaten soll auserdem eine Programmierschnittstelle (Applikation Programming Interface, API) bieten, um die extrahierten Informationen leicht abrufen zu können. Dabei soll in einer ersten Iteration zumindest der lesende Zugriff über JavaScript ermöglicht werden; weitere Versionen werden zusätzlich (schreibenden) Zugriff mittels JavaScript und einem einfachen RDF-Format bieten.
 	
